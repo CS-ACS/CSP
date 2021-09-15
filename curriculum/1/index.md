@@ -1,5 +1,5 @@
 # Chapter 1
-
+{% video https://video.cs50.io/e9Eds2Rc_x8?screen=ClQXfUurzgU %}
 * [Notes](notes)
 * Problems
   * [Hello](https://docs.cs50.net/2019/ap/problems/hello/hello.html)

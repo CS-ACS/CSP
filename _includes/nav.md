@@ -11,5 +11,6 @@
 ***
 
 * [**Curriculum**]({{ "/curriculum" | relative_url }})
+  * [Week 1]({{ "/curriculum/1" | relative_url }})
 * [Tools]({{ "/tools" | relative_url }})
 * [Syllabus]({{"/syllabus" | relative_url }})

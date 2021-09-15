@@ -1,0 +1,10 @@
+<iframe src="https://video.cs50.io/{{ include.id }}"></iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
+<script>
+    document.querySelectorAll('iframe[src^="https://video.cs50.io/"]').forEach(function(element) {
+        element.addEventListener('load', function() {
+            iFrameResize(element);
+        });
+    });
+</script>

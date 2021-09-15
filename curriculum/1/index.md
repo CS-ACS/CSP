@@ -1,5 +1,9 @@
-# Chapter 1
-{% video https://video.cs50.io/e9Eds2Rc_x8?screen=ClQXfUurzgU %}
+---
+videoId: e9Eds2Rc_x8
+---
+
+# Chapter 1: ``C``
+{% include cs50player.html id=page.videoId %}
 * [Notes](notes)
 * Problems
   * [Hello](https://docs.cs50.net/2019/ap/problems/hello/hello.html)
@@ -20,7 +24,7 @@
   * [PDF](https://cdn.cs50.net/2018/fall/lectures/1/src1.pdf)
   * [Sandbox](https://sandbox.cs50.io/fbe800b2-4c6f-4bf4-8642-a853ee08ce5d)
   * [ZIP](https://cdn.cs50.net/2018/fall/lectures/1/src1.zip)
-* [Video](https://video.cs50.net/2018/fall/lectures/1)
+* [Video](https://video.cs50.io/e9Eds2Rc_x8)
 * Reference Sheets
   * [Boolean Expressions](https://ap.cs50.school/assets/pdfs/boolean_expressions.pdf)
   * [Data Types](https://ap.cs50.school/assets/pdfs/data_types.pdf)

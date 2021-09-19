@@ -11,6 +11,8 @@
 ***
 
 * [**Curriculum**]({{ "/curriculum" | relative_url }})
-  * [Week 1]({{ "/curriculum/1" | relative_url }})
+  * [Summer Assignment](https://sites.google.com/acsamman.edu.jo/summeracsap/tech/computer-science-principles)
+  * [Chapter 0: Hardware]({{ "/curriculum/0/hardware" | relative_url }})
+  * [Chapter 1: C]({{ "/curriculum/1" | relative_url }})
 * [Tools]({{ "/tools" | relative_url }})
 * [Syllabus]({{"/syllabus" | relative_url }})

@@ -1,3 +1,3 @@
 source "https://rubygems.org"
-gem "jekyll-theme-cs50"
+gem "jekyll-theme-dinky"
 gem "github-pages", group: :jekyll_plugins

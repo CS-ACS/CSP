@@ -1,5 +1,6 @@
 ***
 
+* [CS50 Sandbox](https://sandbox.cs50.io/)
 * [CS50 IDE](https://ide.cs50.io/)
 * [CS50 Programmer's Manual](https://man.cs50.io/)
 

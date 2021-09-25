@@ -15,8 +15,9 @@
 ***
 
 * [**Curriculum**]({{ "/curriculum" | relative_url }})
-  - [Summer Assignment](https://sites.google.com/acsamman.edu.jo/summeracsap/tech/computer-science-principles)
-  - [Chapter 0: Hardware]({{ "/curriculum/0/hardware" | relative_url }})
-  - [Chapter 1: C]({{ "/curriculum/1" | relative_url }})
+* [Summer Assignment](https://sites.google.com/acsamman.edu.jo/summeracsap/tech/computer-science-principles)
+* [Chapter 0: Hardware]({{ "/curriculum/0/hardware" | relative_url }})
+* [Chapter 1: C]({{ "/curriculum/1" | relative_url }})
+* [Chapter 2: Arrays]({{ "/curriculum/2" | relative_url }})
 * [Tools]({{ "/tools" | relative_url }})
-* [Syllabus]({{"/syllabus" | relative_url }})
+* [Syllabus](https://docs.google.com/document/d/1j5vMltXCLk_IBxIGtvJMpJM-EzXZ0kkMKobXdTgthow/edit?usp=sharing)

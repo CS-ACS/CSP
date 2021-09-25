@@ -1,9 +1,10 @@
 ---
 videoId: e9Eds2Rc_x8
+screenId: ClQXfUurzgU
 ---
 
 # Chapter 1: ``C``
-{% include cs50player.html id=page.videoId %}
+{% include cs50player.html id=page.videoId screen=page.screenId %}
 -   Lecture
     
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/1/lecture1.mp3.download)
@@ -32,7 +33,6 @@ videoId: e9Eds2Rc_x8
         -   [YouTube](https://youtu.be/e9Eds2Rc_x8)
         
     
--   [Quiz](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../quizzes/1/)
 -   Shorts
     
     1.  [Data Types](https://www.youtube.com/embed/q6K8KMqt8wQ)

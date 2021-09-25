@@ -53,7 +53,7 @@ screenId: gCTTN_sINNI
     
 -   Problems
     
-    -   [Readability](readability)
+    -   [Readability](readability), for everyone
     -   [Caesar](caesar), for those less comfortable
     -   [Substitution](substitution), for those more comfortable
     

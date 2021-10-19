@@ -6,7 +6,18 @@ videoId: 8PrOp9t0PyQ
 
 {% include cs50player.html id=page.videoId %}
 
+-   Lecture Chunks & Practice Problems
+    -   2.1: [IDEs, Bugs, Ducks](2-1)
+    -   2.2: [Quotient](2-2)
+    -   2.3: [Letters](2-3)
+    -   2.4: [Cash2](2-4)
 
+-   Problem Set
+    
+    -   [Readability](readability), for everyone
+    -   [Caesar](caesar), for those less comfortable
+    -   [Substitution](substitution), for those more comfortable
+    
 -   Lecture
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/2/lecture2.mp3.download)
     -   [Notes](notes)
@@ -47,18 +58,6 @@ videoId: 8PrOp9t0PyQ
     -   [Compiling](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/compiling.pdf)
     -   [Exit Codes](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/exit_codes.pdf)
     -   [Typecasting](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/typecasting.pdf)
-
--   Lecture Chunks & Practice Problems
-    -   2.1: [IDEs, Bugs, Ducks](2-1)
-    -   2.2: [Quotient](2-2)
-    -   2.3: [Letters](2-3)
-    -   2.4: [Cash2](2-4)
-
--   Problem Set
-    
-    -   [Readability](readability), for everyone
-    -   [Caesar](caesar), for those less comfortable
-    -   [Substitution](substitution), for those more comfortable
     
 -   Past Problems (if you want additional practice/challenge)
     -   [Old Friends](https://docs.cs50.net/2019/ap/problems/friends/friends.html)

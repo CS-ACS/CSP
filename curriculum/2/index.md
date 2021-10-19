@@ -1,14 +1,13 @@
 ---
 videoId: 8PrOp9t0PyQ
-screenId: gCTTN_sINNI
 ---
 
 # Chapter 2: ``Arrays``
 
-{% include cs50player.html id=page.videoId screen=page.screenId %}
+{% include cs50player.html id=page.videoId %}
+
 
 -   Lecture
-    
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/2/lecture2.mp3.download)
     -   [Notes](notes)
     -   Slides
@@ -33,8 +32,6 @@ screenId: gCTTN_sINNI
             -   [4K](https://cdn.cs50.net/2019/fall/lectures/2/lecture2-4k.mp4.download)
             
         -   [YouTube](https://youtu.be/8PrOp9t0PyQ)
-        
-    
 -   Shorts
     
     1.  [Functions](https://www.youtube.com/embed/b7-0sb-DV84)
@@ -50,8 +47,14 @@ screenId: gCTTN_sINNI
     -   [Compiling](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/compiling.pdf)
     -   [Exit Codes](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/exit_codes.pdf)
     -   [Typecasting](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/typecasting.pdf)
-    
--   Problems
+
+-   Lecture Chunks & Practice Problems
+    -   2.1: [IDEs, Bugs, Ducks](2-1)
+    -   2.2: [Quotient](2-2)
+    -   2.3: [Letters](2-3)
+    -   2.4: [Cash2](2-4)
+
+-   Problem Set
     
     -   [Readability](readability), for everyone
     -   [Caesar](caesar), for those less comfortable

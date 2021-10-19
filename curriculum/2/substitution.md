@@ -1,6 +1,6 @@
 # [Substitution](#substitution)
 
-Implement a program that implements a substitution cipher, per the below.
+After watching the entire [Chapter 2 lecture]({{ "/curriculum/2" | relative_url }}) and the practice problems, implement a program that implements a substitution cipher, per the below.
 
 ```
 $ ./substitution JTREKYAVOGDXPSNCUIZLFBMWHQ

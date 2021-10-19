@@ -1,6 +1,6 @@
 # [Readability](#readability)
 
-Implement a program that computes the approximate grade level needed to comprehend some text, per the below.
+After watching the entire [Chapter 2 lecture]({{ "/curriculum/2" | relative_url }}) and the practice problems, implement a program that computes the approximate grade level needed to comprehend some text, per the below.
 
 ```
 $ ./readability

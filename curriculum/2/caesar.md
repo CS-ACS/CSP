@@ -1,6 +1,6 @@
 # [Caesar](#caesar)
 
-Implement a program that encrypts messages using Caesar’s cipher, per the below.
+After watching the entire [Chapter 2 lecture]({{ "/curriculum/2" | relative_url }}) and the practice problems, implement a program that encrypts messages using Caesar’s cipher, per the below.
 
 ```
 $ ./caesar 13

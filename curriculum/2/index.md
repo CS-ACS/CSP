@@ -52,12 +52,12 @@ videoId: 8PrOp9t0PyQ
     
 -   References
     
-    -   [Arrays and Strings](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/arrays_and_strings.pdf)
-    -   [Bugs and Debugging](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/bugs_and_debugging.pdf)
-    -   [Command-Line Interaction](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/command-line_interaction.pdf)
-    -   [Compiling](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/compiling.pdf)
-    -   [Exit Codes](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/exit_codes.pdf)
-    -   [Typecasting](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/2//../../references/typecasting.pdf)
+    -   [Arrays and Strings]({{ site.url }}/assets/pdfs/arrays_and_strings.pdf)
+    -   [Bugs and Debugging]({{ site.url }}/assets/pdfs/bugs_and_debugging.pdf)
+    -   [Command-Line Interaction]({{ site.url }}/assets/pdfs/command-line_interaction.pdf)
+    -   [Compiling]({{ site.url }}/assets/pdfs/compiling.pdf)
+    -   [Exit Codes]({{ site.url }}/assets/pdfs/exit_codes.pdf)
+    -   [Typecasting]({{ site.url }}/assets/pdfs/typecasting.pdf)
     
 -   Past Problems (if you want additional practice/challenge)
     -   [Old Friends](https://docs.cs50.net/2019/ap/problems/friends/friends.html)

@@ -43,15 +43,15 @@ screenId: ClQXfUurzgU
     
 -   References
     
-    -   [Boolean Expressions](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/boolean_expressions.pdf)
-    -   [Data Types](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/data_types.pdf)
-    -   [Functions](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/functions.pdf)
-    -   [Libraries](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/libraries.pdf)
-    -   [Loops](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/loops.pdf)
-    -   [Operators](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/operators.pdf)
-    -   [Principles of Good Design](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/principles_of_good_design.pdf)
-    -   [Syntax](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/syntax.pdf)
-    -   [Variables](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/1//../../references/variables.pdf)
+    -   [Boolean Expressions]({{ site.url }}/assets/pdfs/boolean_expressions.pdf)
+    -   [Data Types]({{ site.url }}/assets/pdfs/data_types.pdf)
+    -   [Functions]({{ site.url }}/assets/pdfs/functions.pdf)
+    -   [Libraries]({{ site.url }}/assets/pdfs/libraries.pdf)
+    -   [Loops]({{ site.url }}/assets/pdfs/loops.pdf)
+    -   [Operators]({{ site.url }}/assets/pdfs/references/operators.pdf)
+    -   [Principles of Good Design]({{ site.url }}/assets/pdfs/principles_of_good_design.pdf)
+    -   [Syntax]({{ site.url }}/assets/pdfs/syntax.pdf)
+    -   [Variables]({{ site.url }}/assets/pdfs/variables.pdf)
     
 -   Problems
     

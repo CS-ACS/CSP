@@ -10,8 +10,8 @@
 * [Syllabus]({{ "/syllabus" | relative_url }})
 * [Video](https://video.cs50.net/2018/fall/lectures/0)
 * Reference Sheets
-  * [Algorithms](https://ap.cs50.school/assets/pdfs/algorithms.pdf)
-  * [ASCII](https://ap.cs50.school/assets/pdfs/ascii.pdf)
-  * [Binary](https://ap.cs50.school/assets/pdfs/binary.pdf)
-  * [Pseudocode](https://ap.cs50.school/assets/pdfs/pseudocode.pdf)
-  * [Scratch](https://ap.cs50.school/assets/pdfs/scratch.pdf)
+  * [Algorithms]({{ site.url }}/assets/pdfs/pdfs/algorithms.pdf)
+  * [ASCII]({{ site.url }}/assets/pdfs/ascii.pdf)
+  * [Binary]({{ site.url }}/assets/pdfs/binary.pdf)
+  * [Pseudocode]({{ site.url }}/assets/pdfs/pseudocode.pdf)
+  * [Scratch]({{ site.url }}/assets/pdfs/scratch.pdf)

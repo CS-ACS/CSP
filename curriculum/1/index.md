@@ -48,7 +48,7 @@ screenId: ClQXfUurzgU
     -   [Functions]({{ site.url }}/assets/pdfs/functions.pdf)
     -   [Libraries]({{ site.url }}/assets/pdfs/libraries.pdf)
     -   [Loops]({{ site.url }}/assets/pdfs/loops.pdf)
-    -   [Operators]({{ site.url }}/assets/pdfs/references/operators.pdf)
+    -   [Operators]({{ site.url }}/assets/pdfs/operators.pdf)
     -   [Principles of Good Design]({{ site.url }}/assets/pdfs/principles_of_good_design.pdf)
     -   [Syntax]({{ site.url }}/assets/pdfs/syntax.pdf)
     -   [Variables]({{ site.url }}/assets/pdfs/variables.pdf)

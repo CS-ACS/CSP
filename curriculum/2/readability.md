@@ -144,7 +144,7 @@ Here, `C` is the average number of alphanumeric characters per word, and `S` is 
 
 Modify `readability.c` so that instead of outputting the number of letters, words, and sentences, it instead outputs the grade level as given by the Coleman-Liau index (e.g. `"Grade 2"` or `"Grade 8"`). Be sure to round the resulting index number up to the nearest whole number and subtract 1! (So, `11.1` becomes `11` and `9` becomes `8`).
 
-If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"College Student"` instead of giving the exact index number. If the index number is less than 1, your program should output `"Kindergarten"`.
+If the resulting index number is 13 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"College Student"` instead of giving the exact index number. If the index number is less than 1, your program should output `"Kindergarten"`.
 
 Hints
 

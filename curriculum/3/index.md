@@ -6,6 +6,9 @@ videoId: fykrlqbV9wM
 
 {% include cs50player.html id=page.videoId %}
 
+## Part 1: 
+
+
 -   Lecture
     
     -   Demos

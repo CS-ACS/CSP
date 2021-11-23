@@ -215,7 +215,7 @@ Be sure to test your code to make sure it handles…
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
 ```
-check50 cs50/problems/2020/x/runoff
+check50 cs-acs/problems/main/runoff
 ```
 
 Execute the below to evaluate the style of your code using `style50`.
@@ -229,5 +229,5 @@ style50 runoff.c
 Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (`*`) instead of the actual characters in your password.
 
 ```
-submit50 cs50/problems/2020/x/runoff
+submit50 cs-acs/problems/main/runoff
 ```

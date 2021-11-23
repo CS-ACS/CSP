@@ -28,7 +28,7 @@ Here’s how to download this problem’s “distribution code” (i.e., starter
 -   Execute `cd` to ensure that you’re in `~/` (i.e., your home directory).
 -   Execute `mkdir plurality` to make (i.e., create) a directory called `plurality` in your `pset3` directory.
 -   Execute `cd plurality` to change into (i.e., open) that directory.
--   Execute `wget https://cdn.cs50.net/2019/fall/psets/3/plurality/plurality.c` to download this problem’s distribution code.
+-   Execute `wget https://cs-acs.com/assets/source_code/plurality.c` to download this problem’s distribution code.
 -   Execute `ls`. You should see this problem’s distribution code, in a file called `plurality.c`.
 
 ## [Understanding](#understanding)
@@ -47,12 +47,12 @@ If you look further down in the file, though, you’ll notice that the `vote` an
 
 Complete the implementation of `plurality.c` in such a way that the program simulates a plurality vote election.
 
--   Complete the `vote` function.
+### Complete the `vote` function.
     -   `vote` takes a single argument, a `string` called `name`, representing the name of the candidate who was voted for.
     -   If `name` matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote. The `vote` function in this case should return `true` to indicate a successful ballot.
     -   If `name` does not match the name of any of the candidates in the election, no vote totals should change, and the `vote` function should return `false` to indicate an invalid ballot.
     -   You may assume that no two candidates will have the same name.
--   Complete the `print_winner` function.
+### Complete the `print_winner` function.
     -   The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
     -   It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes. In that case, you should output the names of each of the winning candidates, each on a separate line.
 
@@ -110,7 +110,7 @@ Be sure to test your code to make sure it handles…
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
 ```
-check50 cs50/problems/2020/x/plurality
+check50 cs-acs/problems/main/plurality
 ```
 
 Execute the below to evaluate the style of your code using `style50`.
@@ -120,5 +120,5 @@ Execute the below to evaluate the style of your code using `style50`.
 Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (`*`) instead of the actual characters in your password.
 
 ```
-submit50 cs50/problems/2020/x/plurality
+submit50 cs-acs/problems/main/plurality
 ```

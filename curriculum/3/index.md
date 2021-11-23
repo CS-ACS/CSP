@@ -15,6 +15,21 @@ videoId: fykrlqbV9wM
     3.   Define an algorithm in English for binary search.
     4.   Describe __Big Ω__ notation. What quality of an algorithm does it describe?
 -   Implement a program in C which accepts any number of random integers as arguments and prints the highest number in the list. The inputs should be separated by spaces (this is what makes them separate arguments) and the program should return a `usage` error if there are no arguments. You don't have to handle any other errors and can assume that all arguments are positive or negative integers. 
+```
+$ ./largest
+Usage: ./largest [int 1] [int 2] ...
+```
+
+```
+$ ./largest 1
+1
+```
+
+```
+$ ./largest -5 10 30 1 5 9 8
+30
+```
+
     -   Submission slug: `cs-acs/problems/main/largest`
 
 

@@ -1,33 +1,69 @@
-# Chapter 3
+---
+videoId: fykrlqbV9wM
+---
 
-* Clips
-  * [CSI Zoom Enhance](https://www.youtube.com/watch?v=i3gv2zOmJiA)
-  * [Let's Enhance](https://www.youtube.com/watch?v=17MctJPzR8w)
-  * [Pointer Fun with Binky](https://www.youtube.com/watch?v=_d0jFalGxnQ)
-* [Notes](notes)
-* Problems
-  * [Fifteen](https://docs.cs50.net/2019/ap/problems/fifteen/fifteen.html)
-  * [Whodunit](https://docs.cs50.net/2019/ap/problems/whodunit/whodunit.html)
-  * [Resize (less comfy)](https://docs.cs50.net/2019/ap/problems/resize/less/resize.html) or [Resize (more comfy)](https://docs.cs50.net/2019/ap/problems/resize/more/resize.html)
-  * [Recover](https://docs.cs50.net/2019/ap/problems/recover/recover.html)
-* Shorts
-  * [Call Stacks](https://www.youtube.com/watch?v=aCPkszeKRa4)
-  * [Dynamic Memory Allocation](https://www.youtube.com/watch?v=xa4ugmMDhiE)
-  * [File Pointers](https://www.youtube.com/watch?v=-BNy3eEBGt0)
-  * [Hexadecimal](https://www.youtube.com/watch?v=8okwMK6htKE)
-  * [Pointers](https://www.youtube.com/watch?v=8VAhORT0ZW8)
-  * [Recursion](https://www.youtube.com/watch?v=nrXIMgInokU)
-* [Slides](https://cdn.cs50.net/2018/fall/lectures/3/lecture3.pdf)
-* Source Code
-  * [CS50 Library](https://github.com/cs50/libcs50/tree/develop/src)
-  * [Index](https://cdn.cs50.net/2018/fall/lectures/3/src3/)
-  * [PDF](https://cdn.cs50.net/2018/fall/lectures/3/src3.pdf)
-  * [Sandbox](https://sandbox.cs50.io/13f78b0a-70db-4dc3-90f5-87164e38d431)
-  * [ZIP](https://cdn.cs50.net/2018/fall/lectures/3/src3.zip)
-* [Video](https://video.cs50.net/2018/fall/lectures/3/)
-* Reference Sheets
-  * [Bugs and Debugging](https://ap.cs50.school/assets/pdfs/bugs_and_debugging.pdf)
-  * [File I/O](https://ap.cs50.school/assets/pdfs/file_io.pdf)
-  * [Hexadecimal](https://ap.cs50.school/assets/pdfs/hexadecimal.pdf)
-  * [Images](https://ap.cs50.school/assets/pdfs/images.pdf)
-  * [Structures and Encapsulation](https://ap.cs50.school/assets/pdfs/structures_and_encapsulation.pdf)
+# Chapter 3: `Algorithms`
+
+{% include cs50player.html id=page.videoId %}
+
+-   Lecture
+    
+    -   Demos
+        
+        -   [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
+        -   [Visualization and Comparison of Sorting Algorithms](https://www.youtube.com/watch?v=ZZuD6iUe3Pc)
+        
+    -   [Audio](https://cdn.cs50.net/2019/fall/lectures/3/lecture3.mp3.download)
+    -   [Notes](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/3//../../notes/3/)
+    -   Slides
+        
+        -   [Google Slides](https://docs.google.com/presentation/d/17eT9MaZBUByTTlpkliT8kTg7AW1820xMIQg0HDd5NCk/edit?usp=sharing)
+        -   [PDF](https://cdn.cs50.net/2019/fall/lectures/3/lecture3.pdf)
+        
+    -   Source Code
+        
+        -   [Index](https://cdn.cs50.net/2019/fall/lectures/3/src3/)
+        -   [PDF](https://cdn.cs50.net/2019/fall/lectures/3/src3.pdf)
+        -   [Zip](https://cdn.cs50.net/2019/fall/lectures/3/src3.zip)
+        
+    -   Video
+        
+        -   [CS50 Video Player](https://video.cs50.io/fykrlqbV9wM?screen=sPRcgqR8CJw)
+        -   MP4
+            
+            -   [360p](https://cdn.cs50.net/2019/fall/lectures/3/lecture3-360p.mp4.download)
+            -   [720p](https://cdn.cs50.net/2019/fall/lectures/3/lecture3-720p.mp4.download)
+            -   [1080p](https://cdn.cs50.net/2019/fall/lectures/3/lecture3-1080p.mp4.download)
+            -   [4K](https://cdn.cs50.net/2019/fall/lectures/3/lecture3-4k.mp4.download)
+            
+        -   [YouTube](https://youtu.be/fykrlqbV9wM)
+        
+    
+-   [Quiz](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/3//../../quizzes/3/)
+-   Shorts
+    
+    1.  [Linear Search](https://www.youtube.com/watch?v=TwsgCHYmbbA)
+    2.  [Binary Search](https://www.youtube.com/watch?v=T98PIp4omUA)
+    3.  [Bubble Sort](https://www.youtube.com/watch?v=RT-hUXUWQ2I)
+    4.  [Selection Sort](https://www.youtube.com/watch?v=3hH8kTHFw2A)
+    5.  [Insertion Sort](https://www.youtube.com/watch?v=O0VbBkUvriI)
+    6.  [Recursion](https://www.youtube.com/watch?v=mz6tAJMVmfM)
+    7.  [Merge Sort](https://www.youtube.com/watch?v=Ns7tGNbtvV4)
+    8.  [Algorithms Summary](https://www.youtube.com/watch?v=ktWL3nN38ZA)
+    
+-   References
+    
+    -   [Binary Search]({{ site.url }}/assets/pdfs/binary_search.pdf)
+    -   [Bubble Sort]({{ site.url }}/assets/pdfs/bubble_sort.pdf)
+    -   [Computational Complexity]({{ site.url }}/assets/pdfs/computational_complexity.pdf)
+    -   [Insertion Sort]({{ site.url }}/assets/pdfs/insertion_sort.pdf)
+    -   [Linear Search]({{ site.url }}/assets/pdfs/linear_search.pdf)
+    -   [Merge Sort]({{ site.url }}/assets/pdfs/merge_sort.pdf)
+    -   [Recursion]({{ site.url }}/assets/pdfs/recursion.pdf)
+    -   [Selection Sort]({{ site.url }}/assets/pdfs/selection_sort.pdf)
+    
+-   Problems
+    
+    -   [Plurality](plurality)
+    -   [Runoff](runoff), for those less comfortable
+    -   [Tideman](https://cs50.harvard.edu/ap/2021/curriculum/x/weeks/3//../../psets/3/tideman/), for those more comfortable

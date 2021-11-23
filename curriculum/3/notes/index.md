@@ -1,632 +1,652 @@
-## Lecture 3
-{:.no_toc}
-
-* TOC
-{:toc}
-
-## Enhance
-
-* We watch a clip, [CSI Zoom Enhance](https://www.youtube.com/watch?v=i3gv2zOmJiA), where the main characters zoom in further and further into an image, revealing more and more details. Today, we'll see how that works (or doesn't) in reality.
-
-## Last time
-
-* We talked about the details of compiling, which is actually made of four steps:
-  * First, our source code is *preprocessed*, so any header files like `stdio.h` that we include, are actually included.
-  * Then, our code is *compiled* into assembly code, instructions that our CPU can understand.
-  * Then, that assembly code is further *assembled* into the binary that match those assembly instructions.
-  * Finally, the compiled library files that we wanted to include, such as `cs50.c` or `printf.c`, are *linked*, or merged with our program.
-* We discovered some helpful tools:
-  * `help50`, which might help us understand error messages
-  * `printf`, which can help us understand our program as it runs
-  * `style50`, which checks the style of our code so it's more readable and consistent
-
-## CS50 IDE
-
-* CS50 IDE is like the CS50 Sandbox, but with more features. It is an online development environment, with a code editor and a terminal window, but also tools for debugging and collaborating:<br>
-  ![browser window with CS50 IDE, panel of files on left, code editor on top right, terminal window on bottom right](/cs50_ide.png)
-* Once we log in, we'll see a workspace that looks similar to that of CS50 Sandbox, but now our workspace will be saved to our account.
-* We can create a new file with File > New File (or the green plus sign), and use File > Save to save it as `hello.c` in the folder `~/workspace/`. Now we'll write our simple program:
-  ```c
-  #include <stdio.h>
-
-  int main(void)
-  {
-      printf("hello, world\n");
-  }
-  ```
-  * And we'll need to manually save, with File > Save or the keyboard shortcut.
-* Now, in the terminal window below, we can type `make hello` and `./hello` to see our program run.
-* The folder icon at the top left will show us all our files in a directory (folder) called `~/workspace/`, and we can create folders and files inside. The `~` symbol refers to our home directory in this environment, which is just the set of all the files related to our account, and `workspace` is a folder inside `~` that we can use. (The `~` directory also has other configuration files for our account, but we won't need to worry about them.)
-* In the terminal, we see `~/workspace/ $ `. The `$ ` part of the prompt is the same as before, after which we can type a command, but the first part of the prompt tells us the directory our terminal is in. For example, we can type `ls`, and we'll see a textual version of the `workspace` directory. And `./hello` refers to a file called `hello` in `.`, which is the current folder.
-* We can change our directory with `cd`, and if we type something like `cd src3` (assuming we have a folder already named `src3`), we'll see our prompt change to `~/workspace/src3/ $ `.
-* We can delete files and folders with the graphical file tree, right-clicking them as we might be familiar with already. But we can do the same in the command line, with `rm hello`, which will remove files. The command will ask us for a confirmation, and we can type `yes` or `y` (or `n`, if we've changed our minds).
-* We can create directories with `mkdir test`, and `rmdir` to remove them.
-
-## Tools
-
-* In the CS50 IDE, we've also added another tool, `check50`. Like `style50`, we wrote this tool to automatically check the correctness of your programs, by passing in inputs and looking at their outputs.
-* After we write a program from a problem set, and have tested it ourselves with a few inputs, we can type `check50 cs50/problems/2019/ap/hello`. The `cs50/problems/2019/ap/hello` is an indicator for the program specification that `check50` should check, and once we run that command, we'll see `check50` uploading our code and checking it.
-* We can also now use a tool called a *debugger*, built into the CS50 IDE.
-* After we compile our code, we can run `debug50 ./hello`, which will tell us to set a breakpoint first. A *breakpoint* indicates a line of code where the debugger should pause our program, until we choose to continue it. For example, we can click to the left of a line of our code, and a red circle will appear:<br>
-  ![code editor with red icon next to line 6 of code](breakpoint.png)
-* Now, if we run `debug50 ./hello` again, we'll see the debugger panel open on the right:<br>
-  ![debugger panel with controls, variables](debugger_panel.png)
-* We see that the variable we made, `name`, is under the `Local Variables` section, and see that there's a value of `0x0` (which is `null`), and a type of `string`, as we expected.
-* Our breakpoint has paused our program _before_ line 6, so to continue, we have a few controls in the debugger panel. The blue triangle will continue our program until we reach another breakpoint. The curved arrow to its right will "step over" the line, running it and pausing our program again immediately after. The arrow pointing downward will "step into" the line, if there is a function being called. And the arrow pointing up and to the right will "step out" of a function, if we are in one.
-* So, we'll use the curved arrow to run the next line, and see what changes after. After we type in our name, we'll see that the `name` variable is also updated in the debugger.
-* We can save lots of time in the future by investing a little bit now to learn how the debugger works!
-
-## Strings
-
-* We've been using helpful functions from the CS50 Library, like `get_int` or `get_string`, to get input of a specific type from the user. These functions are generally tricky to write, because we want to prompt the user over and over again, if the input they give us isn't actually valid.
-* Today, we'll look into the `string` type. As we learned last time, a string is just an array of characters, stored back-to-back. But let's investigate what a `string` variable actually is.
-* Let's open `compare0.c`:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-
-  int main(void)
-  {
-      // Get two integers
-      int i = get_int("i: ");
-      int j = get_int("j: ");
-
-      // Compare integers
-      if (i == j)
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-  }
-  ```
-  * As expected, if we provide the same values for `i` and `j`, we see that they're the same.
-* In `compare1.c`, we'll try to do the same with strings:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-
-  int main(void)
-  {
-      // Get two strings
-      string s = get_string("s: ");
-      string t = get_string("t: ");
-
-      if (s == t)
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-  }
-  ```
-  * Hmm, no matter what we type in for our strings, our program thinks they are different.
-* It turns out, `string` is not actually a data type in C. The word "string" is common in computer science, but there is no way to store strings in C. Instead, we defined that type in the CS50 Library.
-* Recall that strings are just arrays of characters, so when we ran our `compare1` program, we got two strings as input from the user, and those might be stored in memory as the following:<br>
-  !["Brian\0" and "Veronica\0" in different grids](strings.png)
-  * Each character is in one byte, and somewhere we have bytes in memory containing the values for each of string.
-* It turns out, each byte in memory has a numeric location, or *address*. For example, the character `B` might have the address 100, and `V` might have ended up in `900` (depending on what parts of memory were available, or free):<br>
-  !["Brian\0" and "Veronica\0" in different grids, with each grid, or byte in memory, labelled](strings_with_addresses.png)
-  * Notice that, since each string is an array of characters, each character within the array has consecutive addresses, since they are stored next to each other in memory. But the strings themselves might have very different addresses.
-* So, `get_string` actually returns just the address of the first character of the string. (We can tell where it ends by looking for the `null` character, `\0`.) Now, we can infer that comparing two "strings" actually just compares two addresses (which will always be different, since `get_string` stores the input in a new place each time), even if the characters stored at those addresses are the same.
-* Other data types in C, such as `int`s or `float`s, are generally passed and stored as their values, since they are always a fixed number of bytes. Strings, on the other hand, are passed as their addresses, since they could be really long.
-* If we do want to compare two strings, it seems like what we need to do is compare each character one at a time:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  bool compare_strings(string a, string b);
-
-  int main(void)
-  {
-      // Get two strings
-      string s = get_string("s: ");
-      string t = get_string("t: ");
-
-      // Compare strings for equality
-      if (compare_strings(s, t))
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-  }
-
-  bool compare_strings(string a, string b)
-  {
-      // Compare strings' lengths
-      if (strlen(a) != strlen(b))
-      {
-          return false;
-      }
-
-      // Compare strings character by character
-      for (int i = 0, n = strlen(a); i < n; i++)
-      {
-          // Different
-          if (a[i] != b[i])
-          {
-              return false;
-          }
-      }
-
-      // Same
-      return true;
-  }
-  ```
-  * We write a function[^1] called `compare_strings`, which takes in two strings as arguments, and return a `bool`, or Boolean expression.
-  * First, we compare the strings' lengths, and `return false` if they are not the same. Then, we can check each character, and `return false` if we get to any that are different.
-  * We also need to remember to add the prototype, `bool compare_strings(string a, string b);` to the top.
-* A `string` is actually a synonym for a `char *`. The `*` in C (which also means multiplication, depending on the context), means that the data type is an address. So a `char *` is an address to a `char`. And such a variable type is called, more formally, a *pointer*.
-* Now, we can replace `char *` where we've been using string:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  bool compare_strings(char *a, char *b);
-
-  int main(void)
-  {
-      // Get two strings
-      char *s = get_string("s: ");
-      char *t = get_string("t: ");
-
-      // Compare strings for equality
-      if (compare_strings(s, t))
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-  }
-
-  bool compare_strings(char *a, char *b)
-  {
-      // Compare strings' lengths
-      if (strlen(a) != strlen(b))
-      {
-          return false;
-      }
-
-      // Compare strings character by character
-      for (int i = 0, n = strlen(a); i < n; i++)
-      {
-          // Different
-          if (a[i] != b[i])
-          {
-              return false;
-          }
-      }
-
-      // Same
-      return true;
-  }
-  ```
-* It turns out, there's a library function in `string.h`, written by others many years ago, called `strcmp`, which compares strings for us:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  int main(void)
-  {
-      // Get two strings
-      char *s = get_string("s: ");
-      char *t = get_string("t: ");
-
-      // Compare strings for equality
-      if (strcmp(s, t) == 0)
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-  }
-  ```
-  * The return value for `strcmp`, based on looking at documentation like the [CS50 Programmer's Manual](https://man.cs50.io/), will be `0` if the strings are equal, or some other value if they are different.
-* We should also be checking for other errors, that we haven't paid attention to before.
-* `get_string` is supposed to return the address to the first byte of a string, but sometimes it may return `NULL`, an invalid address that indicates something went wrong. (And that address has the value of `0`, which is a special address that isn't used to store anything.)
-* To check for errors, we might do this:
-  ```c
-
-  #include <cs50.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  int main(void)
-  {
-      // Get a string
-      char *s = get_string("s: ");
-      if (s == NULL)
-      {
-          return 1;
-      }
-
-      // Get another string
-      char *t = get_string("t: ");
-      if (t == NULL)
-      {
-          return 1;
-      }
-
-      // Compare strings for equality
-      if (strcmp(s, t) == 0)
-      {
-          printf("same\n");
-      }
-      else
-      {
-          printf("different\n");
-      }
-      return 0;
-  }
-  ```
-  * If, for some reason, `get_string` doesn't return a valid address, we ourselves will return an exit code of `1`, to indicate some error has occurred. If we continued, we might see a *segmentation fault*, which means that we tried to access memory that we aren't able to (such as at the `NULL` address).
-  * We can simplify the condition to just `if (!s)`, since "not `s`" will be "not 0" when `s` is `NULL`, which ultimately resolves to "true".
-* Now, let's try to copy a string:
-  ```c
-  #include <cs50.h>
-  #include <ctype.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  int main(void)
-  {
-      // Get a string
-      string s = get_string("s: ");
-
-      // Copy string's address
-      string t = s;
-
-      // Capitalize first letter in string
-      if (strlen(t) > 0)
-      {
-          t[0] = toupper(t[0]);
-      }
-
-      // Print string twice
-      printf("s: %s\n", s);
-      printf("t: %s\n", t);
-  }
-  ```
-  * We get a string `s`, and copy the value of `s` into `t`. Then, we capitalize the first letter in `t`.
-  * But when we run our program, we see that both `s` and `t` are now capitalized.
-  * Since we set `s` and `t` to the same values, they're actually pointers to the same character, and so we capitalized the same character:<br>
-    ![s and t variables pointing to the same string](pointers.png)
-* To actually make a copy of a string, we have to do a little more work:
-  ```c
-  #include <cs50.h>
-  #include <ctype.h>
-  #include <stdio.h>
-  #include <string.h>
-
-  int main(void)
-  {
-      // Get a string
-      char *s = get_string("s: ");
-      if (!s)
-      {
-          return 1;
-      }
-
-      // Allocate memory for another string
-      char *t = malloc((strlen(s) + 1) * sizeof(char));
-      if (!t)
-      {
-          return 1;
-      }
-
-      // Copy string into memory
-      for (int i = 0, n = strlen(s); i <= n; i++)
-      {
-          t[i] = s[i];
-      }
-
-      // Capitalize first letter in copy
-      if (strlen(t) > 0)
-      {
-          t[0] = toupper(t[0]);
-      }
-
-      // Print strings
-      printf("s: %s\n", s);
-      printf("t: %s\n", t);
-
-      // Free memory
-      free(t);
-      return 0;
-  }
-  ```
-  * We create a new variable, `t`, of the type `char *`, with `char *t`. Now, we want to point it to a new chunk of memory that's large enough to store the copy of the string. With `malloc`, we can allocate some number of bytes in memory (that aren't already used to store other values), and we pass in the number of bytes we'd like. We already know the length of `s`, so we add 1 to that for the terminating null character, and we multiply that by `sizeof(char)` (which gets us the number of bytes for each character) to be sure that we have enough memory. So, our final line of code is `char *t = malloc((strlen(s) + 1) * sizeof(char));`.
-  * Then, we copy each character, one at a time, and now we can capitalize just the first letter of `t`. And we use `i <= n`, since we actually want to go up to one past `n`, to ensure we copy the terminating character in the string. Finally, after we're done, we call `free(t)`, which tells our computer that those bytes are no longer useful to our program, and so those bytes in memory can be reused again.
-  * We can actually also use the `strcpy` library function, which we can learn about through reading documentation, to copy a string.
-* A *memory leak*  happens when we allocate more and more memory for our program to use, but we don't free that memory. Then, our computer gets slower and slower (since it has to compensate for less and less memory).
-* Let's look at why it might be hard to get input from a user:
-  ```c
-  #include <stdio.h>
-
-  int main(void)
-  {
-      int x;
-      printf("x: ");
-      scanf("%i", &x);
-      printf("x: %i\n", x);
-  }
-  ```
-  * `scanf` is a function that gets input from the user, according to a particular format. We pass in `%i` to indicate that we're looking for an integer, and we use `&x` to get the address of `x`, so `scanf` can put the value into the right place in memory.
-* But now let's try to get a string:
-  ```c
-  #include <stdio.h>
-
-  int main(void)
-  {
-      char *s;
-      printf("s: ");
-      scanf("%s", s);
-      printf("s: %s\n", s);
-  }
-  ```
-  * Since we didn't allocate any memory for the actual bytes of the string, `scanf` had nowhere to store the input.
-* We can allocate some number of bytes as an array of characters:
-  ```c
-  #include <stdio.h>
-
-  int main(void)
-  {
-      char s[5];
-      printf("s: ");
-      scanf("%s", s);
-      printf("s: %s\n", s);
-  }
-  ```
-  * Now, we have 5 bytes in memory into which we can store input.
-  * Notice that we can pass in `s` as an address, since arrays can be treated like pointers to the first element in the array.
-  * But if we were to type in a much longer string, we eventually get a "segmentation fault", where we tried to access a segment of memory we couldn't or shouldn't. It turns out that `scanf` doesn't know how much memory is allocated, so it keeps writing to memory, starting at the address `s`, for as much input as is passed in, even though we might not have allocated as much. `get_string` handles this for us, and allocates memory as needed. (And if you're super interested, the [source code](https://github.com/cs50/libcs50/blob/develop/src/cs50.c) for the CS50 Library is available!)
-
-## Memory
-
-* To tie this all together, recall that we have physical chips of RAM in our computers, that store all the bytes we have. And each byte has an address. We can see this with `addresses.c`:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-
-  int main(void)
-  {
-      // Get two strings
-      string s = get_string("s: ");
-      string t = get_string("t: ");
-
-      // Print strings' addresses
-      printf("s: %p\n", s);
-      printf("t: %p\n", t);
-  }
-  ```
-  * Here, we tell `printf` to treat `s` and `t` as pointers with `%p`, so we see addresses like `0x2331010` and `0x2331050`.
-* The values are super big (because there are lots of location in memory), and they're usually noted in a system called hexadecimal. Like binary and decimal, hexadecimal is a way to represent numbers, and it has 16 possible values per digit, 0-9 and A-F. (It just happens that the addresses for `s` and `t` had no alphabetical characters.) And a value in hexadecimal will conventionally start with `0x`, to indicate that.
-* Earlier, we saw `0x0` in the debugger panel for the `name` variable, and then a different value once we inputted a string, and that was the address of our string.
-* We can look at an example of converting three bytes from decimal, to binary, and to hexadecimal:
-  ```
-       255         216         255
-  11111111    11011000    11111111
-     f   f       d   8       f   f
-  ```
-  * Since each digit in hexadecimal has 16 possible values, that maps to 4 binary digits, and so each byte can be expressed as 2 hexadecimal digits, like `0xff` and `0xd8`. Four `1`s in binary is 15 in decimal, and `f` in hexadecimal.
-* We have two drinks, milk and orange juice, each of which is in a cup. We want to swap the drinks between the two cups, but we can't do that without a third cup to pour one of the drink into first.
-* Now, let's say we wanted to swap the values of two integers.
-  ```c
-  void swap(int a, int b)
-  {
-      int tmp = a;
-      a = b;
-      b = tmp;
-  }
-  ```
-  * With a third variable to use as temporary storage space, we can do this pretty easily.
-* But, if we tried to use that function in a program, we don't see any changes:
-  ```c
-  #include <stdio.h>
-
-  void swap(int a, int b);
-
-  int main(void)
-  {
-      int x = 1;
-      int y = 2;
-
-      printf("x is %i, y is %i\n", x, y);
-      swap(x, y);
-      printf("x is %i, y is %i\n", x, y);
-  }
-
-  void swap(int a, int b)
-  {
-      int tmp = a;
-      a = b;
-      b = tmp;
-  }
-  ```
-  * It turns out that the `swap` function gets its own variables, `a` and `b` when they are passed in, that are copies of `x` and `y`, and so changing those values don't change `x` and `y` in the `main` function.
-* By passing in the address of `x` and `y`, our `swap` function can actually work:
-  ```c
-  #include <stdio.h>
-
-  void swap(int *a, int *b);
-
-  int main(void)
-  {
-      int x = 1;
-      int y = 2;
-
-      printf("x is %i, y is %i\n", x, y);
-      swap(&x, &y);
-      printf("x is %i, y is %i\n", x, y);
-  }
-
-  void swap(int *a, int *b)
-  {
-      int tmp = *a;
-      *a = *b;
-      *b = tmp;
-  }
-  ```
-  * The addresses of `x` and `y` are passed in from `main` to `swap`, and we use the `*a` syntax to _follow_ (or *dereference*) a pointer and get the value stored there. We save that to `tmp`, and then take the _value_ at `b` and store that as the _value_ of `a`. Finally, we store the value of `tmp` as the value of `b`, and we're done.
-  * We'll click to the left of the line `int x = 1` to set a breakpoint with the red icon, and run `debug50 ./swap` again, to step through our program one line at a time. We can use the "step into" button now, to go into our `swap` function and see how it works.
-
-## Memory layout
-
-* Within our computer's memory, the different types of data that need to be stored for our program are organized into different sections:<br>
-  ![Grid with sections, from top to bottom: text, initialized data, uninitialized data, heap (with arrow pointing downward), stack (with arrow pointing upward), and environment variables](memory_layout.png)
-  * The *text* section is our compiled program's binary code. When we run our program, that code is loaded into the "top" of memory.
-  * The *heap* section is an open area where `malloc` can get free memory from, for our program to use.
-  * The *stack* section is used by functions in our program as they are called. For example, our `main` function is at the very bottom of the stack, and has the variables `x` and `y`. The `swap` function, when it's called, has some memory that's on top of `main`, with the variables `a`, `b`, and `tmp`:<br>
-    ![Stack section with swap (a, b, tmp) above main (1, 2)](stack.png)
-    * Once the function `swap` returns, the memory it was using is freed for the next function call, and we lose anything we did, other than the return values.
-    * So by passing in the addresses of `x` and `y` from `main` to `swap`, we could actually change the values of `x` and `y`.
-  * Global variables are in the initialized data and uninitialized data sections, and environment variables from the command-line are also stored in a section.
-* Let's look at a buggy section of code:
-  ```c
-  int main(void)
-  {
-      int *x;
-      int *y;
-
-      x = malloc(sizeof(int));
-
-      *x = 42;
-      *y = 13;
-
-      y = x;
-
-      *y = 13;
-  }
-  ```
-  * Here, we declare two pointers called `x` and `y`. We allocate memory for an integer for `x`, but not `y`, so trying to store the value `13` into `*y` might lead to a segmentation fault.
-  * But if we set `y` to be the same as `x`, pointing to the same address, we can successfully store the value `13` to that location.
-* We watch another clip, [Pointer Fun with Binky](https://www.youtube.com/watch?v=_d0jFalGxnQ).
-* We might have used the website [StackOverflow](http://stackoverflow.com), a Q&A site commonly used for programming questions. Now, we can understand that the name of the site comes from a reference to the stack overflowing, or having too many function calls to fit in our computer's memory.
-
-## Structs
-
-* We can create variables of our own type with a concept called structs.
-* For example, if we wanted to store both names and dorms of individual students, we might have arrays for each:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-
-  int main(void)
-  {
-      // Space for students
-      int enrollment = get_int("Enrollment: ");
-      string names[enrollment];
-      string dorms[enrollment];
-
-      // Prompt for students' names and dorms
-      for (int i = 0; i < enrollment; i++)
-      {
-          names[i] = get_string("Name: ");
-          dorms[i] = get_string("Dorm: ");
-      }
-
-      // Print students' names and dorms
-      for (int i = 0; i < enrollment; i++)
-      {
-          printf("%s is in %s.\n", names[i], dorms[i]);
-      }
-  }
-  ```
-* But we might want to start having other pieces of data, and we have to make sure that all the arrays are the right length, and have the data for the same person at the same index. and so on. Instead, we can use structs, with a `struct.h` file containing:
-  ```c
-  typedef struct
-  {
-      char *name;
-      char *dorm;
-  }
-  student;
-  ```
-* And a `struct.c` file containing:
-  ```c
-  #include <cs50.h>
-  #include <stdio.h>
-
-  #include "struct.h"
-
-  int main(void)
-  {
-      // Space for students
-      int enrollment = get_int("Enrollment: ");
-      student students[enrollment];
-
-      // Prompt for students' names and dorms
-      for (int i = 0; i < enrollment; i++)
-      {
-          students[i].name = get_string("Name: ");
-          students[i].dorm = get_string("Dorm: ");
-      }
-
-      // Print students' names and dorms
-      for (int i = 0; i < enrollment; i++)
-      {
-          printf("%s is in %s.\n", students[i].name, students[i].dorm);
-      }
-  }
-  ```
-  * Now, a `student` is our own variable type, that itself contains two variables, `name` and `dorm`, that we can access with `.name` and `.dorm` later on.
-* We can even open and save files with a snippet of code like:
-  ```c
-  FILE *file = fopen("students.csv", "w");
-  if (file)
-  {
-      for (int i = 0; i < enrollment; i++)
-      {
-          fprintf(file, "%s,%s\n", students[i].name, students[i].dorm);
-      }
-      fclose(file);
-  }
-  ```
-  * This is just a sneak preview of what we'll learn to use in the next problem set!
-
-## Enhance?
-
-* Now, if we try to zoom in on an image, we'll eventually see the pixels that it's made of. But since images are represented as a finite number of bytes, we can't possibly see details that aren't already captured.
-* Images can be represented as a *bitmap*, or map of bits:<br>
-  ![mapping of bits in a grid to a smiley face](bitmap.png)
-  * Each `1` maps to a black pixel, and a `0` to a white pixel.
-  * An image with color will use more than one bit per pixel.
-* And an image file will also include special data values, at the beginning of the file, so that programs can open them correctly. In the problem set, we'll learn about one such image file format, `.bmp`, for bitmaps. And we'll learn to tweak images digitally, resizing or filtering them as we'd like.
-* We end on a clip of a realistic example from the TV show Futurama, [Let's Enhance](https://www.youtube.com/watch?v=17MctJPzR8w).
-
----
-
-[^1]: In the exam reference sheet for the AP CSP exam:
-    * The syntax to declare a function is:
-    ```html
-    PROCEDURE procName(parameter1, parameter2, …)
+# [Lecture 3](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#lecture-3)
+
+-   [Searching](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#searching)
+-   [Big O](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#big-o)
+-   [Linear search](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#linear-search)
+-   [Structs](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#structs)
+-   [Sorting](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#sorting)
+-   [Selection sort](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#selection-sort)
+-   [Recursion](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#recursion)
+-   [Merge sort](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#merge-sort)
+
+## [Searching](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#searching)
+
+-   Last time, we talked about memory in a computer, or RAM, and how our data can be stored as individual variables or as arrays of many items, or elements.
+-   We can think of an array with a number of items as a row of lockers, where a computer can only open one locker to look at an item, one at a time.
+-   For example, if we want to check whether a number is in an array, with an algorithm that took in an array as input and produce a boolean as a result, we might:
+    -   look in each locker, or at each element, one at a time, from the beginning to the end.
+        -   This is called **linear search**, where we move in a line, since our array isn’t sorted.
+    -   start in the middle and move left or right depending on what we’re looking for, if our array of items is sorted.
+        -   This is called **binary search**, since we can divide our problem in two with each step, like what David did with the phone book in week 0.
+-   We might write pseudocode for linear search with:
+    
+    ```
+    For i from 0 to n–1
+        If i'th element is 50
+            Return true
+    Return false
+    ```
+    
+    -   We can label each of `n` lockers from `0` to `n–1`, and check each of them in order.
+-   For binary search, our algorithm might look like:
+    
+    ```
+    If no items
+        Return false
+    If middle item is 50
+        Return true
+    Else if 50 < middle item
+        Search left half
+    Else if 50 > middle item
+        Search right half
+    ```
+    
+    -   Eventually, we won’t have any parts of the array left (if the item we want wasn’t in it), so we can return `false`.
+    -   Otherwise, we can search each half depending on the value of the middle item.
+
+## [Big O](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#big-o)
+
+-   In week 0, we saw different types of algorithms and their running times: ![chart with: "size of problem" as x–axis; "time to solve" as y–axis; red, steep straight line from origin to top of graph labeled "n"; yellow, less steep straight line from origin to top of graph labeled "n/2"; green, curved line that gets less and less steep from origin to right of graph labeled "log_2 n"](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//running_time.png)
+-   The more formal way to describe this is with big _O_ notation, which we can think of as “on the order of”. For example, if our algorithm is linear search, it will take approximately _O_(_n_) steps, “on the order of _n_”. In fact, even an algorithm that looks at two items at a time and takes _n_/2 steps has _O_(_n_). This is because, as _n_ gets bigger and bigger, only the largest term, _n_, matters.
+-   Similarly, a logarithmic running time is _O_(log _n_), no matter what the base is, since this is just an approximation of what happens with _n_ is very large.
+-   There are some common running times:
+    -   _O_(_n_2)
+    -   _O_(_n_ log _n_)
+    -   _O_(_n_)
+        -   (linear search)
+    -   _O_(log _n_)
+        -   (binary search)
+    -   _O_(1)
+-   Computer scientists might also use big Ω, big Omega notation, which is the lower bound of number of steps for our algorithm. (Big _O_ is the upper bound of number of steps, or the worst case, and typically what we care about more.) With linear search, for example, the worst case is _n_ steps, but the best case is 1 step since our item might happen to be the first item we check. The best case for binary search, too, is 1 since our item might be in the middle of the array.
+-   And we have a similar set of the most common big Ω running times:
+    -   Ω(_n_2)
+    -   Ω(_n_ log _n_)
+    -   Ω(_n_)
+        -   (counting the number of items)
+    -   Ω(log _n_)
+    -   Ω(1)
+        -   (linear search, binary search)
+
+## [Linear search](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#linear-search)
+
+-   Let’s take a look at `numbers.c`:
+    
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    int main(void)
     {
-    < block of statements >
+        // An array of numbers
+        int numbers[] = {4, 8, 15, 16, 23, 42};
+    
+        // Search for 50
+        for (int i = 0; i < 6; i++)
+        {
+            if (numbers[i] == 50)
+            {
+                printf("Found\n");
+                return 0;
+            }
+        }
+        printf("Not found\n");
+        return 1;
     }
     ```
-    and when you want to return a value, you would use:
-    ```html
-    PROCEDURE procName(parameter1, parameter2, …)
+    
+    -   Here we initialize an array with some values, and we check the items in the array one at a time, in order.
+    -   And in each case, depending on whether the value was found or not, we can return an exit code of either 0 (for success) or 1 (for failure).
+-   We can do the same for names:
+    
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    int main(void)
     {
-    < block of statements >
-    RETURN(expression)
+        // An array of names
+        string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+    
+        // Search for EMMA
+        for (int i = 0; i < 4; i++)
+        {
+            if (strcmp(names[i], "EMMA") == 0)
+            {
+                printf("Found\n");
+                return 0;
+            }
+        }
+        printf("Not found\n");
+        return 1;
     }
     ```
-    * The syntax to call a function is `procName (arg1, arg2, …)`, where `procName` is the name of the procedure or function and `arg1` and `arg2` are the arguments or parameters.
-    * To call said procedure, the syntax would be `procName(parameter1)`, where `parameter1` is the actual value of the first argument.
-    * The `RETURN(expression)` syntax operates just the same as the return keyword in C.
-    * Storing the output of a function in a variable would look like this: `result ← procName(arg1, arg2, …)`
-    * You are provided with an `INPUT` function, which takes input from the user and returns that value.
+    
+    -   We can’t compare strings directly, since they’re not a simple data type but rather an array of many characters, and we need to compare them differently. Luckily, the `string` library has a `strcmp` function which compares strings for us and returns `0` if they’re the same, so we can use that.
+-   Let’s try to implement a phone book with the same ideas:
+    
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    int main(void)
+    {
+        string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+        string numbers[] = {"617–555–0100", "617–555–0101", "617–555–0102", "617–555–0103"};
+    
+        for (int i = 0; i < 4; i++)
+        {
+            if (strcmp(names[i], "EMMA") == 0)
+            {
+                printf("Found %s\n", numbers[i]);
+                return 0;
+            }
+        }
+        printf("Not found\n");
+        return 1;
+    }
+    ```
+    
+    -   We’ll use strings for phone numbers, since they might include formatting or be too long for a number.
+    -   Now, if the name at a certain index in the `names` array matches who we’re looking for, we’ll return the phone number in the `numbers` array, at the same index. But that means we need to particularly careful to make sure that each number corresponds to the name at each index, especially if we add or remove names and numbers.
+
+## [Structs](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#structs)
+
+-   It turns out that we can make our own custom data types called **structs**:
+    
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+    
+    typedef struct
+    {
+        string name;
+        string number;
+    }
+    person;
+    
+    int main(void)
+    {
+        person people[4];
+    
+        people[0].name = "EMMA";
+        people[0].number = "617–555–0100";
+    
+        people[1].name = "RODRIGO";
+        people[1].number = "617–555–0101";
+    
+        people[2].name = "BRIAN";
+        people[2].number = "617–555–0102";
+    
+        people[3].name = "DAVID";
+        people[3].number = "617–555–0103";
+    
+        // Search for EMMA
+        for (int i = 0; i < 4; i++)
+        {
+            if (strcmp(people[i].name, "EMMA") == 0)
+            {
+                printf("Found %s\n", people[i].number);
+                return 0;
+            }
+        }
+        printf("Not found\n");
+        return 1;
+    }
+    ```
+    
+    -   We can think of structs as containers, inside of which are multiple other data types.
+    -   Here, we create our own type with a struct called `person`, which will have a `string` called `name` and a `string` called `number`. Then, we can create an array of these struct types and initialize the values inside each of them, using a new syntax, `.`, to access the properties of each `person`.
+    -   In our loop, we can now be more certain that the `number` corresponds to the `name` since they are from the same `person` element.
+
+## [Sorting](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#sorting)
+
+-   If our input is an unsorted list of numbers, there are many algorithms we could use to produce an output of a sorted list.
+-   With eight volunteers on the stage with the following numbers, we might consider swapping pairs of numbers next to each other as a first step.
+-   Our volunteers start in the following random order:
+    
+    ```
+    6 3 8 5 2 7 4 1
+    ```
+    
+-   We look at the first two numbers, and swap them so they are in order:
+    
+    ```
+    6 3 8 5 2 7 4 1
+    – –
+    3 6 8 5 2 7 4 1
+    ```
+    
+-   The next pair, `6` and `8`, are in order, so we don’t need to swap them.
+-   The next pair, `8` and `5`, need to be swapped:
+    
+    ```
+    3 6 8 5 2 7 4 1
+        – –
+    3 6 5 8 2 7 4 1
+    ```
+    
+-   We continue until we reach the end of the list:
+    
+    ```
+    3 6 5 2 8 7 4 1
+            – –
+    3 6 5 2 7 8 4 1
+              – –
+    3 6 5 2 7 4 8 1
+                – –
+    3 6 5 2 7 4 1 8
+    ```
+    
+-   Our list isn’t sorted yet, but we’re slightly closer to the solution because the biggest value, `8`, has been shifted all the way to the right.
+-   We repeat this with another pass through the list:
+    
+    ```
+    3 6 5 2 7 4 1 8
+    – –
+    3 6 5 2 7 4 1 8
+      – –
+    3 5 6 2 7 4 1 8
+        – –
+    3 5 2 6 7 4 1 8
+          – –
+    3 5 2 6 7 4 1 8
+            – –
+    3 5 2 6 4 7 1 8
+                – –
+    3 5 2 6 4 1 7 8
+    ```
+    
+    -   Note that we didn’t need to swap the 3 and 6, or the 6 and 7.
+-   Now, the next biggest value, `7`, moved all the way to the right. If we repeat this, more and more of the list becomes sorted, and pretty quickly we have a fully sorted list.
+-   This algorithm is called **bubble sort**, where large values “bubble” to the right. The pseudocode for this might look like:
+    
+    ```
+    Repeat n–1 times
+        For i from 0 to n–2
+            If i'th and i+1'th elements out of order
+                Swap them
+    ```
+    
+    -   Since we are comparing the `i'th` and `i+1'th` element, we only need to go up to _n_ – 2 for `i`. Then, we swap the two elements if they’re out of order.
+    -   And we can stop after we’ve made _n_ – 1 passes, since we know the largest n–1 elements will have bubbled to the right.
+-   We have _n_ – 2 steps for the inner loop, and _n_ – 1 loops, so we get _n_2 – 3_n_ + 2 steps total. But the largest factor, or dominant term, is _n_2, as `n` gets larger and larger, so we can say that bubble sort is _O_(_n_2).
+-   We’ve seen running times like the following, and so even though binary search is much faster than linear search, it might not be worth the one–time cost of sorting the list first, unless we do lots of searches over time:
+    -   _O_(_n_2)
+        -   bubble sort
+    -   _O_(_n_ log _n_)
+    -   _O_(_n_)
+        -   linear search
+    -   _O_(log _n_)
+        -   binary search
+    -   _O_(1)
+-   And Ω for bubble sort is still _n_2, since we still check each pair of elements for _n_ – 1 passes.
+
+## [Selection sort](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#selection-sort)
+
+-   We can take another approach with the same set of numbers:
+    
+    ```
+    6 3 8 5 2 7 4 1
+    ```
+    
+-   First, we’ll look at each number, and remember the smallest one we’ve seen. Then, we can swap it with the first number in our list, since we know it’s the smallest:
+    
+    ```
+    6 3 8 5 2 7 4 1
+    –             –
+    1 3 8 5 2 7 4 6
+    ```
+    
+-   Now we know at least the first element of our list is in the right place, so we can look for the smallest element among the rest, and swap it with the next unsorted element (now the second element):
+    
+    ```
+    1 3 8 5 2 7 4 6
+      –     –
+    1 2 8 5 3 7 4 6
+    ```
+    
+-   We can repeat this over and over, until we have a sorted list.
+-   This algorithm is called **selection sort**, and we might write pseudocode like this:
+    
+    ```
+    For i from 0 to n–1
+        Find smallest item between i'th item and last item
+        Swap smallest item with i'th item
+    ```
+    
+-   With big _O_ notation, we still have running time of _O_(_n_2), since we were looking at roughly all _n_ elements to find the smallest, and making _n_ passes to sort all the elements.
+-   More formally, we can use some formulas to show that the biggest factor is indeed _n_2:
+    
+    ```
+    n + (n – 1) + (n – 2) + ... + 1
+    n(n + 1)/2
+    (n^2 + n)/2
+    n^2/2 + n/2
+    O(n^2)
+    ```
+    
+-   So it turns out that selection sort is fundamentally about the same as bubble sort in running time:
+    -   _O_(_n_2)
+        -   bubble sort, selection sort
+    -   _O_(_n_ log _n_)
+    -   _O_(_n_)
+        -   linear search
+    -   _O_(log _n_)
+        -   binary search
+    -   _O_(1)
+-   The best case, Ω, is also _n_2.
+-   We can go back to bubble sort and change its algorithm to be something like this, which will allow us to stop early if all the elements are sorted:
+    
+    ```
+    Repeat until no swaps
+        For i from 0 to n–2
+            If i'th and i+1'th elements out of order
+                Swap them
+    ```
+    
+    -   Now, we only need to look at each element once, so the best case is now Ω(_n_):
+        -   Ω(_n_2)
+            -   selection sort
+        -   Ω(_n_ log _n_)
+        -   Ω(_n_)
+            -   bubble sort
+        -   Ω(log _n_)
+        -   Ω(1)
+            -   linear search, binary search
+-   We look at a visualization online [comparing sorting algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) with animations for how the elements move within arrays for both bubble sort and selection sort.
+
+## [Recursion](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#recursion)
+
+-   Recall that in week 0, we had pseudocode for finding a name in a phone book, where we had lines telling us to “go back” and repeat some steps:
+    
+    ```
+    1  Pick up phone book
+    2  Open to middle of phone book
+    3  Look at page
+    4  If Smith is on page
+    5      Call Mike
+    6  Else if Smith is earlier in book
+    7      Open to middle of left half of book
+    8      **Go back to line 3**
+    9  Else if Smith is later in book
+    10     Open to middle of right half of book
+    11     **Go back to line 3**
+    12 Else
+    13     Quit
+    ```
+    
+-   We could instead just repeat our entire algorithm on the half of the book we have left:
+    
+    ```
+    1  Pick up phone book
+    2  Open to middle of phone book
+    3  Look at page
+    4  If Smith is on page
+    5      Call Mike
+    6  Else if Smith is earlier in book
+    7      **Search left half of book**
+    8
+    9  Else if Smith is later in book
+    10     **Search right half of book**
+    11
+    12 Else
+    13     Quit
+    ```
+    
+    -   This seems like a cyclical process that will never end, but we’re actually dividing the problem in half each time, and stopping once there’s no more book left.
+-   **Recursion** occurs when a function or algorithm refers to itself, as in the new pseudocode above.
+-   In week 1, too, we implemented a “pyramid” of blocks in the following shape:
+    
+    ```
+    #
+    ##
+    ###
+    ####
+    ```
+    
+    -   And we might have had iterative code like this:
+        
+        ```
+        #include <cs50.h>
+        #include <stdio.h>
+        
+        void draw(int h);
+        
+        int main(void)
+        {
+            // Get height of pyramid
+            int height = get_int("Height: ");
+        
+            // Draw pyramid
+            draw(height);
+        }
+        
+        void draw(int h)
+        {
+            // Draw pyramid of height h
+            for (int i = 1; i <= h; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    printf("#");
+                }
+                printf("\n");
+            }
+        }
+        ```
+        
+        -   Here, we use `for` loops to print each block in each row.
+-   But notice that a pyramid of height 4 is actually a pyramid of height 3, with an extra row of 4 blocks added on. And a pyramid of height 3 is a pyramid of height 2, with an extra row of 3 blocks. A pyramid of height 2 is a pyramid of height 1, with an extra row of 2 blocks. And finally, a pyramid of height 1 is just a pyramid of height 0, or nothing, with another row of a single block added on.
+-   With this idea in mind, we can write:
+    
+    ```
+    #include <cs50.h>
+    #include <stdio.h>
+    
+    void draw(int h);
+    
+    int main(void)
+    {
+        // Get height of pyramid
+        int height = get_int("Height: ");
+    
+        // Draw pyramid
+        draw(height);
+    }
+    
+    void draw(int h)
+    {
+        // If nothing to draw
+        if (h == 0)
+        {
+            return;
+        }
+    
+        // Draw pyramid of height h - 1
+        draw(h - 1);
+    
+        // Draw one more row of width h
+        for (int i = 0; i < h; i++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+    ```
+    
+    -   Now, our `draw` function first calls itself **recursively**, drawing a pyramid of height `h - 1`. But even before that, we need to stop if `h` is 0, since there won’t be anything left to drawn.
+    -   After, we draw the next row, or a row of width `h`.
+
+## [Merge sort](https://cs50.harvard.edu/ap/2021/curriculum/x/notes/3//#merge-sort)
+
+-   We can take the idea of recusion to sorting, with another algorithm called merge sort. The pseudocode might look like:
+    
+    ```
+    If only one item
+      Return
+    Else
+        Sort left half of items
+        Sort right half of items
+        Merge sorted halves
+    ```
+    
+-   We’ll best see this in practice with an unsorted list:
+    
+    ```
+    7 4 5 2 6 3 8 1
+    ```
+    
+-   First, we’ll sort the left half (the first four elements):
+    
+    ```
+    7 4 5 2 | 6 3 8 1
+    – – – –
+    ```
+    
+-   Well, to sort that, we need to sort the left half of the left half first:
+    
+    ```
+    7 4 | 5 2 | 6 3 8 1
+    – –
+    ```
+    
+-   Now, we have just one item, `7`, in the left half, and one item, `4`, in the right half. So we’ll merge that together, by taking the smallest item from each list first:
+    
+    ```
+    – – | 5 2 | 6 3 8 1
+    4 7
+    ```
+    
+-   And now we go back to the right half of the left half, and sort it:
+    
+    ```
+    – – | – – | 6 3 8 1
+    4 7 | 2 5
+    ```
+    
+-   Now, both halves of the left half are sorted, so we can merge the two of them together. We look at the start of each list, and take `2` since it’s smaller than `4`. Then, we take `4`, since it’s now the smallest item at the front of both lists. Then, we take `5`, and finally, `7`, to get:
+    
+    ```
+    – – – – | 6 3 8 1
+    – – – –
+    2 4 5 7
+    ```
+    
+-   We now sort the right half the same way. First, the left half of the right half:
+    
+    ```
+    – – – – | – – | 8 1
+    – – – – | 3 6 |
+    2 4 5 7
+    ```
+    
+-   Then, the right half of the right half:
+    
+    ```
+    – – – – | – – | – –
+    – – – – | 3 6 | 1 8
+    2 4 5 7
+    ```
+    
+-   We can merge the right half together now:
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    2 4 5 7 | 1 3 6 8
+    ```
+    
+-   And finally, we can merge both halves of the whole list, following the same steps as before. Notice that we don’t need to check all the elements of each half to find the smallest, since we know that each half is already sorted. Instead, we just take the smallest element of the two at the start of each half:
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    2 4 5 7 | – 3 6 8
+    1
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – 4 5 7 | – 3 6 8
+    1 2
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – 4 5 7 | – – 6 8
+    1 2 3
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – – 5 7 | – – 6 8
+    1 2 3 4
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – 7 | – – 6 8
+    1 2 3 4   5
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – 7 | – – – 8
+    1 2 3 4   5 6
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – – | – – – 8
+    1 2 3 4   5 6 7
+    ```
+    
+    ```
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – – | – – – –
+    1 2 3 4   5 6 7 8
+    ```
+    
+-   It took a lot of steps, but it actually took fewer steps than the other algorithms we’ve seen so far. We broke our list in half each time, until we were “sorting” eight lists with one element each:
+    
+    ```
+    7 | 4 | 5 | 2 | 6 | 3 | 8 | 1
+    4   7 | 2   5 | 3   6 | 1   8
+    2   4   5   7 | 1   3   6   8
+    1   2   3   4   5   6   7   8
+    ```
+    
+-   Since our algorithm divided the problem in half each time, its running time is logarithmic with _O_(log _n_). And after we sorted each half (or half of a half), we needed to merge together all the elements, with _n_ steps since we had to look at each element once.
+-   So our total running time is _O_(_n_ log _n_):
+    -   _O_(_n_2)
+        -   bubble sort, selection sort
+    -   _O_(_n_ log _n_)
+        -   merge sort
+    -   _O_(_n_)
+        -   linear search
+    -   _O_(log _n_)
+        -   binary search
+    -   _O_(1)
+-   Since log _n_ is greater than 1 but less than _n_, _n_ log _n_ is in between _n_ (times 1) and _n_2.
+-   The best case, Ω, is still _n_ log _n_, since we still sort each half first and then merge them together:
+    -   Ω(_n_2)
+        -   selection sort
+    -   Ω(_n_ log _n_)
+        -   merge sort
+    -   Ω(_n_)
+        -   bubble sort
+    -   Ω(log _n_)
+    -   Ω(1)
+        -   linear search, binary search
+-   Finally, there is another notation, Θ, Theta, which we use to describe running times of algorithms if the upper bound and lower bound is the same. For example, merge sort has Θ(_n_ log _n_) since the best and worst case both require the same number of steps. And selection sort has Θ(_n_2).
+-   We look at a [final visualization](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) of sorting algorithms with a larger number of inputs, running at the same time.

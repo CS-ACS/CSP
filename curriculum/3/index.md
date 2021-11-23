@@ -6,7 +6,16 @@ videoId: fykrlqbV9wM
 
 {% include cs50player.html id=page.videoId %}
 
-## Part 1: 
+## Chunk 3.1: `Computational Complexity`
+
+-   Watch the lecture from 0:00 - 26:14. We will cover this material in class as well, so you can skip this portion unless you miss class or need reinforcement of the concepts. 
+-   Answer these questions (submit on Classroom):
+    1.   Describe __Big O__ notation. What quality of an algorithm does it describe?
+    2.   Define an algorithm in English for linear search.
+    3.   Define an algorithm in English for binary search.
+    4.   Describe __Big Ω__ notation. What quality of an algorithm does it describe?
+-   Implement a program in C which accepts any number of random integers as arguments and prints the highest number in the list. The inputs should be separated by spaces (this is what makes them separate arguments) and the program should return a `usage` error if there are no arguments. You don't have to handle any other errors and can assume that all arguments are positive or negative integers. 
+    -   Submission slug: `cs-acs/problems/main/largest`
 
 
 -   Lecture

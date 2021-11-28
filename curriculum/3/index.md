@@ -40,7 +40,7 @@ $ ./largest -5 10 30 1 5 9 8
     -   Describe the Insertion Sort algorithm in your own words (English/pseudocode).
     -   Which Big-O values are considered a "reasonable" run time and which aren't?
 - Implement a program in C which accepts any number of random integers as arguments and sorts them using the selection sort algorithm ([pdf]({{ site.url }}/assets/pdfs/selection_sort.pdf) \| [video](https://www.youtube.com/watch?v=3hH8kTHFw2A)). Your program should print the array each time it makes a change to it (i.e. swapping two elements). 
-    -   Execute `wget https://cs-acs.com/assets/source_code/plurality.c` to download this problem’s distribution code.
+    -   Execute `wget https://cs-acs.com/assets/source_code/selection.c` to download this problem’s distribution code.
     -   You will only write the `selection_sort()` function and should not need to modify any of the other distribution code, though all that matters in the end is that it passes the check50 checks.
     -   You don't have to handle any errors other than what is already implemented in the distribution code.
     -   You can assume that all arguments will be positive or negative integers. 

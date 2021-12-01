@@ -9,7 +9,7 @@ videoId: fykrlqbV9wM
 
     -   3.1: [Computational Complexity](1)
     -   3.2: [Sorting Algorithms](2)
-    -   3.3: [Plurality](3)
+    -   3.3: [Data Structures](3)
 
 -   Lecture
 

@@ -7,10 +7,9 @@ videoId: 8PrOp9t0PyQ
 {% include cs50player.html id=page.videoId %}
 
 -   Lecture Chunks & Practice Problems
-    -   2.1: [IDEs, Bugs, Ducks](2-1)
-    -   2.2: [Quotient](2-2)
-    -   2.3: [Letters](2-3)
-    -   2.4: [Cash2](2-4)
+    -   2.1: [Quotient](2-2)
+    -   2.2: [Letters](2-3)
+    -   2.3: [Cash2](2-4)
 
 -   Problem Set
     

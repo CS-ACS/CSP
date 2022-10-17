@@ -1,5 +1,10 @@
 permalink: pretty
 
-theme: jekyll-theme-cs50
+
+plugins:
+  - jekyll-remote-theme
+#theme: jekyll-theme-cs50
+
+remote_theme: cs50/jekyll-theme-cs50
 
 title: CS@ACS

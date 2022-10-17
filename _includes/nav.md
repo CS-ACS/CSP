@@ -13,7 +13,5 @@
 
 ***
 
-* [**Curriculum**]({{ "/curriculum" | relative_url }})
-* TODO
 * [Tools]({{ "/tools" | relative_url }})
 * [Syllabus](https://docs.google.com/document/d/1j5vMltXCLk_IBxIGtvJMpJM-EzXZ0kkMKobXdTgthow/edit?usp=sharing)

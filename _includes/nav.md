@@ -1,6 +1,5 @@
 ***
 
-* [CS50 Sandbox](https://sandbox.cs50.io/)
 * [VS Code Codespace](https://code.cs50.io/)
 * [Submit50](https://submit.cs50.io/)
 * [CS50 Programmer's Manual](https://man.cs50.io/)
@@ -15,8 +14,6 @@
 ***
 
 * [**Curriculum**]({{ "/curriculum" | relative_url }})
-* [Chapter 1: C]({{ "/curriculum/1" | relative_url }})
-* [Chapter 2: Arrays]({{ "/curriculum/2" | relative_url }})
-* [Chapter 3: Algorithms]({{ "/curriculum/3" | relative_url }})
+* TODO
 * [Tools]({{ "/tools" | relative_url }})
 * [Syllabus](https://docs.google.com/document/d/1j5vMltXCLk_IBxIGtvJMpJM-EzXZ0kkMKobXdTgthow/edit?usp=sharing)

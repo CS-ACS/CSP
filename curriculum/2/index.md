@@ -2,20 +2,17 @@
 videoId: 8PrOp9t0PyQ
 ---
 
-# Chapter 2: ``Arrays``
+# Unit 2: ``Arrays``
 
 {% include cs50player.html id=page.videoId %}
 
--   Lecture Chunks & Practice Problems
-    -   2.1: [Quotient](2-2)
-    -   2.2: [Letters](2-3)
-    -   2.3: [Cash2](2-4)
-
 -   Problem Set
+    -   [Quotient](2-2)
+    -   [Letters](2-3)
+    -   [Caesar](caesar_c_python)
+    -   [Vigenere](vigenère_python)
+    -   [Crack](crack)
     
-    -   [Readability](readability), for everyone
-    -   [Caesar](caesar), for those less comfortable
-    -   [Substitution](substitution), for those more comfortable
     
 -   Lecture
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/2/lecture2.mp3.download)

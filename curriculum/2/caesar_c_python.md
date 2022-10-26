@@ -120,11 +120,11 @@ $ ./caesar 1 2 3
 Usage: ./caesar key
 ```
 
-## [Specification if using C](#specification)
+# [Specification for C](#specification)
 
 Design and implement a program, `caesar`, that encrypts messages using Caesar’s cipher.
 
--   Implement your program in a file called `caesar.c` in a `~/pset2/caesar` directory.
+-   Implement your program in a file called `caesar.c`.
 -   Your program must accept a single command-line argument, a non-negative integer. Let’s call it _k_ for the sake of discussion.
 -   If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error message of your choice (with `printf`) and return from `main` a value of `1` (which tends to signify an error) immediately.
 -   If any of the characters of the command-line argument is not a decimal digit, your program should print the message `Usage: ./caesar key` and return from `main` a value of `1`.
@@ -298,9 +298,9 @@ submit50 cs-acs/problems/main/caesar
 
 # [Specification for Python](#specification_py)
 
-Design and implement a program, `caesar`, that encrypts messages using Caesar’s cipher, exactly as you did in [Problem Set 2](https://lab.cs50.io/cs50/labs/2019/ap/caesar/), except that your program this time should be written (a) in Python and (b) in CS50 IDE.
+Design and implement a program, `caesar`, that encrypts messages using Caesar’s cipher, exactly as described above, except that your program this time should be written in Python.
 
--   Implement your program in a file called `caesar.py` in your `~/chapter6/caesar` directory (if it doesn’t already exist, create it now!).
+-   Implement your program in a file called `caesar.py`.
     
 -   Your program must accept a single command-line argument, a non-negative integer. Let’s call it _k_ for the sake of discussion.
     

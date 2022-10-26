@@ -1,7 +1,7 @@
 # [Vigenere](#specification)
 ## [Background](https://docs.cs50.net/2018/x/psets/2/vigenere/vigenere.html#background#background)
 
-Vigenère’s cipher improves upon [Caesar’s cipher](https://docs.cs50.net/2018/x/psets/2/vigenere/vigenere.html#background../caesar/caesar.html) by encrypting messages using a sequence of keys (or, put another way, a keyword). In other words, if _p_ is some plaintext and _k_ is a keyword (i.e., an alphbetical string, whereby A represents 0, B represents 1, C represents 2, …, and Z represents 25), then each letter, _c<sub>i</sub>_, in the ciphertext, _c_, is computed as:
+Vigenère’s cipher improves upon Caesar’s cipher by encrypting messages using a sequence of keys (or, put another way, a keyword). In other words, if _p_ is some plaintext and _k_ is a keyword (i.e., an alphbetical string, whereby A represents 0, B represents 1, C represents 2, …, and Z represents 25), then each letter, _c<sub>i</sub>_, in the ciphertext, _c_, is computed as:
 
 $$
 c_i = (p_i + k_j) \bmod 26
@@ -95,10 +95,10 @@ If you’d like to play with the staff’s own implementation of `vigenere`, you
 
 ## How to Submit
     
-    ```
-    submit50 cs50/problems/2019/ap/sentimental/vigenere
-    ```
+```
+submit50 cs50/problems/2019/ap/sentimental/vigenere
+```
 
 ## Hints
 
-Not sure where to begin? As luck would have it, this program’s pretty similar to [`caesar`](https://docs.cs50.net/2019/ap/problems/sentimental/vigenere/vigenere.html../caesar/caesar.html)! Only this time, you need to decide which character in _k_ to use as you iterate from character to character in _p_.
+Not sure where to begin? As luck would have it, this program’s pretty similar to `caesar`! Only this time, you need to decide which character in _k_ to use as you iterate from character to character in _p_.

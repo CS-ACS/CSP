@@ -89,7 +89,7 @@ Slaloms are courses which the participant must navigate around the set flags, or
 
 Now that the [Controller is paired](https://kb.vex.com/hc/en-us/articles/360035589752-How-to-Pair-the-VEX-IQ-Robot-Brain-with-the-VEX-IQ-Controller-for-Wireless-Operation) and the project is [downloaded](https://kb.vex.com/hc/en-us/articles/360035591232-How-to-Download-and-Run-a-Project-VEXcode-IQ-Blocks), you are ready to move your Clawbot using the Controller!
 
--   Collect four tems you will use as flags in your slalom and set them in place.
+-   Collect four items you will use as flags in your slalom and set them in place. You can use the Vex Companion Cubes for this.
     
 -   Download the clawbotController project. 
     
@@ -119,7 +119,7 @@ Event-based programming in robotics is when certain robot behaviors trigger the 
 
 To learn more about event-based programming, watch our tutorial on events by clicking Tutorials in the toolbar and selecting the Events tutorial.
 
-### Step 1: Clawbot Control w/ Events
+### Step 1: Clawbot Controller with Events
 This time, we'll use a different example project. The Clawbot Controller with Events example project contains the Clawbot motors and sensors configuration. If the template is not used, your robot will not run the project correctly.
 -   Go to the file menu, Open Examples, filter by selecting "Events", then select the Clawbot Controller with Events example project.
 #### ![template icon]({{ "/robotics/loops/images/controller_icon.jpg" | relative_url }})
@@ -130,16 +130,43 @@ Now, take a look at how the blocks are being used in this project. In your engin
 
 -   What’s happening when you run this project? What will the Clawbot be able to do?
 
--   What would happen if we didn’t use the <Not> block in this project?
+-   What would happen if we didn’t use the \<Not\> block in this project?
 
+### Step 2: Robo-Slalom with Cargo
 
+The goal of this activity is to grab and release an object with the Clawbot using the Controller.
 
+Here are some steps to guide your team:
 
+-   Get one of the Vex Companion Cubes or some other object the clawbot will be able to pick up.
+    
+-   Examine the code to understand the sequence of actions you'll need to execute on the controller
+    
+-   [Download](https://kb.vex.com/hc/en-us/articles/360035591232-How-to-Download-and-Run-a-Project-VEXcode-IQ-Blocks) button in the Toolbar to download the Clawbot Control project to the Robot Brain.
 
+![Brain screen](https://education.vex.com/stemlabs/sites/default/files/inline-images/ClawbotControl.png)
+
+-   [Run](https://kb.vex.com/hc/en-us/articles/360035952591-How-to-Run-User-Programs-that-are-on-the-VEX-IQ-Robot-Brain) the project on the Clawbot by making sure the project is highlighted and then press the Check button.
+    
+-   Run the slalom again as you did last time, but this time pick up a cube (or whichever object) at the end, bring it back, and set it down. Each member of your group should take a turn being timed doing this and make a brief video to include in their documentation.
+
+## Part 3: Experiment
+The Vexcode IQ program includes many tutorials, and is a quite visual and intuitive way of programming a robot. Starting from the example you used in the previous part, __individually__ develop a modified program that gets the clawbot to behave differently when the controller is used. 
+
+There is no specific task it needs to complete, but it should be significantly different than the example and your teammates' code and the effect should be a modification to the behavior of the clawbot that is an enhancement, is useful, or is interesting.  
+
+#### Documentation
+-   Screenshots of individual code blocks with specific explanation of what your code does (similar to how the code is explained in these instructions)
+-   Video of your clawbot in action. The controller and bot should both be visible.
 
 ## Submission
 
 Submit a single Google Slides presentation with the following included. Each group member must submit their own documentation.
--   Video and times of each group member completing your slalom course.
+-   Predictions and explanation regarding the Forever block (Part 1, Step 3)
+-   Video and times of each group member completing your slalom course (Part 1, Step 5)
+-   Predictions and explanation of the Clawbot Controller with Events code (Part 2, Step 1)
+-   Video and times of each group member completing your slalom course with cargo (Part 2, Step 2)
+-   Explanation and video of your modified code (part 3)
+
 
 [Source](https://education.vex.com/stemlabs/iq/stemlabs-iq/clawbot-with-controller/the-completed-look-of-the-build)

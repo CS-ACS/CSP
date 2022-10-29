@@ -7,8 +7,6 @@
 
 VEXcode IQ is the coding environment for programming a VEX IQ Robot. The following article provides links to other articles that will help you start coding with VEXcode IQ. At the end of this article, you will have the option of either programming the VEX Clawbot IQ to drive forward or to create a project to print ‘VEX’ on the LCD display of the VEX IQ Brain.
 
-![IQEDUhero.jpg](https://kb.vex.com/hc/article_attachments/360064674531/IQEDUhero.jpg)
-
 **Note:** in order to test your project at the end of this article, ensure you begin with a [charged IQ Battery](https://kb.vex.com/hc/en-us/articles/360035955011-Charge-Battery-VEX-IQ).
 
 This article will include:
@@ -196,15 +194,13 @@ ___
 
 The following two projects will allow you to practice building a project in VEXcode IQ.
 
-### Print ‘VEX’
+### Hello!
 
-This project will allow you to build a project without having to assemble a robot. All that will be needed is the VEX IQ Brain and a [charged battery](https://kb.vex.com/hc/en-us/articles/360035955011-Charge-Battery-VEX-IQ).
+This project will allow you to build a project without having to assemble a robot. All that will be needed is the VEX IQ Brain and a [charged battery](https://kb.vex.com/hc/en-us/articles/360035955011-Charge-Battery-VEX-IQ), but you can run this program on your clawbot.
 
 ![IQ_Brain_Connected_ON_copy.png](https://kb.vex.com/hc/article_attachments/360064510072/IQ_Brain_Connected_ON_copy.png)
 
 Ensure the IQ Brain is connected to your device and [powered on](https://kb.vex.com/hc/en-us/articles/360035952571-Power-On-and-Off-Robot-Brain-for-VEX-IQ).
-
-![VEXcode-IQ-icon.jpg](https://kb.vex.com/hc/article_attachments/360064511912/VEXcode-IQ-icon.jpg)
 
 Launch VEXcode IQ.
 
@@ -218,27 +214,29 @@ From the ‘Looks’ category select a \[Print\] block and attach it to the {Whe
 
 ![ReplaceTheWord.png](https://kb.vex.com/hc/article_attachments/360064512052/ReplaceTheWord.png)
 
-Replace the word ‘Hello’ in the parameter with the word ‘VEX.’
+Replace the word ‘Hello’ in the parameter with a message of your choosing
 
 ![Download_and_Run.png](https://kb.vex.com/hc/article_attachments/360064512152/Download_and_Run.png)
 
-Save, download, and run your project.
+Save your project as *yourname*_hello, download, and run your project.
 
 ![BrainScreen.png](https://kb.vex.com/hc/article_attachments/360064512172/BrainScreen.png)
 
-‘VEX’ will print on the LED display of the IQ Brain.
+Your message will print on the LED display of the IQ Brain.
+
+#### Submission
+
+Make a short video that shows the code on your screen and the program running on the brain and submit to Classroom.
 
 ### Drive Forward
 
-This project is intended to be used with the standard Clawbot IQ. View the [Clawbot with Controller STEM Lab](https://education.vex.com/xyleme_content/clawbot-with-controller/web/index.html#Item1-2-1) for build instructions.
+This project is intended to be used with the standard Clawbot IQ you build in the ![Clawbot Build]({{ "/robotics/clawbot/" | relative_url }}) assignment.
 
 ![Clawbot_IQ__copy.png](https://kb.vex.com/hc/article_attachments/360064679071/Clawbot_IQ__copy.png)
 
 ![IQ_Brain_Connected_ON_copy.png](https://kb.vex.com/hc/article_attachments/360064510072/IQ_Brain_Connected_ON_copy.png)
 
 Ensure the IQ Brain is connected to your device and [powered on](https://kb.vex.com/hc/en-us/articles/360035952571-Power-On-and-Off-Robot-Brain-for-VEX-IQ).
-
-![VEXcode-IQ-icon.jpg](https://kb.vex.com/hc/article_attachments/360064511912/VEXcode-IQ-icon.jpg)
 
 Launch VEXcode IQ.
 
@@ -251,6 +249,7 @@ A new blank project will open.
 Open the ‘Clawbot (Drivetrain 2-motor)’ [example project](https://www.youtube.com/watch?v=yJvA-QpKvKI&list=PLvvcc7S26YEiWk5P24qwHdM655Pit6dh5&index=12).
 
 **Note:** The template requires a Gyro to be plugged into Smart Port 4.
+![gyro](https://www.vexrobotics.com/media/catalog/product/cache/d64bdfbef0647162ce6500508a887a85/g/y/gyrosensor_7.jpg)
 
 ![FromTheDrivetrain.png](https://kb.vex.com/hc/article_attachments/360064679211/FromTheDrivetrain.png)
 
@@ -260,3 +259,8 @@ From the ‘Drivetrain’ category, select a \[Drive for\] block and attach it t
 
 Save, download, and run your project. The Clawbot will now drive forward 200 mm.
 
+#### Submission
+
+Make a short video that shows the code on your screen and the program running on the clawbot and submit to Classroom. You may
+
+[Source](https://kb.vex.com/hc/en-us/articles/360046675092-Coding-with-VEXcode-IQ-1st-gen-)

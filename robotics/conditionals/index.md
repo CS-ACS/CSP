@@ -1,0 +1,1 @@
+[Vex instructions](https://education.vex.com/stemlabs/iq/stemlabs-iq/to-do-or-not-to-do/the-completed-look-of-the-build)

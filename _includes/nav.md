@@ -13,6 +13,7 @@
 
 * __CSP__
     * [Unit 2]({{ "/curriculum/2/" | relative_url }})
+    * [Project Rubric]({{ "/curriculum/project/" | relative_url }})
 
 ***
 

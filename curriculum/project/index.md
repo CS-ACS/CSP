@@ -2,15 +2,15 @@
 
 ## Criteria
 ### _Product_
-     * Takes an input
-     * Produces an output
-     * Is accessible in a public GitHub repository
-     * Includes a LICENSE
-     * includes a README
-     * Has a clear purpose explained in the README
-     * Its functionality is clearly explained through documentation 
-     * Runs as intended without error
-     * Performs complex operations that could not easily be done without a computer
+* Takes an input
+* Produces an output
+* Is accessible in a public GitHub repository
+* Includes a LICENSE
+* includes a README
+* Has a clear purpose explained in the README
+* Its functionality is clearly explained through documentation 
+* Runs as intended without error
+* Performs complex operations that could not easily be done without a computer
 
 
 ### _Expertise_

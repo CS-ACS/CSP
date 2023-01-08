@@ -9,7 +9,7 @@
 * includes a README
 * Has a clear purpose explained in the README
 * Its functionality is clearly explained through documentation 
-* Runs as intended without error
+* Runs as intended without error 
 * Performs complex operations that could not easily be done without a computer
 
 

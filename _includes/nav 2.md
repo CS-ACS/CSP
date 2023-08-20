@@ -12,7 +12,7 @@
 ***
 
 * __CSP__
-    * [Unit 2]({{ "/curriculum/2/" | relative_url }})
+    * [Unit 2]({{ "/csp/2/" | relative_url }})
 
 ***
 

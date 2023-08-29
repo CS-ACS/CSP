@@ -1,17 +1,24 @@
-# CS50 Core Curriculum
+# AP Computer Science Principles
 
-* [Chapter 0](0)
-* [Chapter 1](1)
-* [Chapter 2](2)
-* [Chapter 3](3)
-* [Chapter 4](4)
-* [Chapter 5](5)
-* [Chapter 6](6)
-* [Chapter 7](7)
-* [Chapter 8](8)
+* [Syllabus](syllabus)
+* [Collaboration & Academic Honesty Policy]({{ "/academic_honesty" | relative_url }})
+* [Grading Policy]({{ "/grading" | relative_url }})
+* [About Mr. Bowman]({{ "/bowman" | relative_url }})
 
+***
+
+* [Unit 0](0)
+* [Unit 1](1)
+<!-- * [Unit 2](2)
+* [Unit 3](3)
+* [Unit 4](4)
+* [Unit 5](5)
+* [Unit 6](6)
+* [Unit 7](7)
+* [Unit 8](8) -->
+<!-- 
 # AP Modules
 
 * [Understanding Technology](understanding_technology)
 * [Data Science](data_science)
-* [Impact of Computing](impact_of_computing)
+* [Impact of Computing](impact_of_computing) -->

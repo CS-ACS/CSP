@@ -6,7 +6,6 @@
 {:toc}
 
 
-
 This course’s philosophy on academic honesty is best stated as “be reasonable.” The course recognizes that interactions with classmates and others can facilitate mastery of the course’s material. However, there remains a line between enlisting the help of another and submitting the work of another. This policy characterizes both sides of that line.
 
 **The essence of all work that you submit to this course must be your own**. Collaboration on problems is not permitted (unless explicitly stated otherwise) except to the extent that you may ask classmates and others for help so long as that help does not reduce to another doing your work for you. Generally speaking, **when asking for help, you may show your code or writing to others, but you may not view theirs**, so long as you and they respect this policy’s other constraints. 
@@ -17,7 +16,7 @@ Collaboration on the AP CSP Create Performance Task is permitted to the extent p
 
 Below are examples that <span style="text-decoration:underline;">inexhaustibly</span> characterize acts that the course considers reasonable and not reasonable. If in doubt as to whether some act is reasonable, do not commit it until you solicit and receive approval in writing from your instructor. If you commit some act that is not reasonable but bring it to the attention of your teacher within 72 hours, we might discuss immediate consequences such as an alternative assignment or partial credit. If a violation of this policy is suspected and confirmed by your teacher, disciplinary measures will be taken and likely involve notifying your parents and administrators.
 
-**Reasonable**
+## Reasonable
 
 
 
@@ -33,8 +32,7 @@ Below are examples that <span style="text-decoration:underline;">inexhaustibly</
 * Whiteboarding solutions to problems with others using diagrams or pseudocode.
 * Working with (and even paying) a tutor to help you with the course, provided the tutor does not do your work for you.
 
-**Not Reasonable**
-
+## Not Reasonable
 
 
 * Accessing a solution to an assignment prior to (re-)submitting your own.
@@ -55,7 +53,7 @@ Below are examples that <span style="text-decoration:underline;">inexhaustibly</
 * Viewing another’s work on an assignment and basing your own solution on it.
 
 
-# Examples - Coding
+## Examples - Coding
 
 **Example 1**
 
@@ -80,7 +78,7 @@ Hamza opens his laptop and reads his own code while he’s helping Louis. **<spa
 Hamza has by now spent a couple hours with Louis, and Louis still needs help, but Hamza really needs to get back to his own work. He pastes his own code in a message to Louis, after Louis promises only to look at it when he really has to. **<span style="text-decoration:underline;">INAPPROPRIATE</span>**
 
 
-# Examples - Design
+## Examples - Design
 
 **Example 1**
 
@@ -135,7 +133,7 @@ Hans talks with Julia, asking questions and making general suggestions to help j
 * If you use open source software, the source code itself will typically contain the copyright and terms of use. It is good practice to duplicate the copyright in your code, and/or store the license in a file with the code.
 
 
-# Citation Examples
+## Citation Examples
 
 
 
@@ -144,7 +142,7 @@ Hans talks with Julia, asking questions and making general suggestions to help j
 **Code Example 1**
 
 In describing the class PluginProxyUtil in the Apache Project source code, the developer cites the source as a post in a forum and includes the URL, author and date:
-
+```
 /**
 
 * A utility class that gives applets the ability to detect proxy host settings.
@@ -156,19 +154,19 @@ In describing the class PluginProxyUtil in the Apache Project source code, the d
 * http://forum.java.sun.com/thread.jspa?threadID=364342&tstart=120
 
 */
-
+```
 (Source: Apache Project source code http://svn.apache.org retrieved in July 2019.)
 
 **Code Example 2**
 
 In the function OutputTraceToStream in the Google Chrome stack_trace_win source code, the developer cites the source code as the Microsoft Developer Network and includes a URL:
-
+```
 // Code adapted from MSDN example:
 
 // http://msdn.microsoft.com/en-us/library/ms680578(VS.85).aspx 
 
 (Source: https://github.com/adobe/chromium/blob/master/base/debug/stack_trace_win.cc retrieved in July 2019.)
-
+```
 <p style="text-align: right">
 Adapted from <a href="http://integrity.mit.edu/handbook/writing-code">Writing Code (from MIT Research Guide)</a> and <a href="https://cs50.harvard.edu/ap/2021/syllabus/#academic-honesty">Harvard’s CS50 syllabus</a></p>
 

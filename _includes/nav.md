@@ -35,3 +35,4 @@
 
 * [Tools]({{ "/tools" | relative_url }})
 * [Collaboration & Academic Honesty Policy]({{ "/academic_honesty" | relative_url }})
+* [Grading Policy]({{ "/grading" | relative_url }})

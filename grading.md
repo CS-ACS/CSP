@@ -53,30 +53,10 @@ When determining your grade in any of the categories, I consider all of the evid
 Letter grades can mean different things in different assignments and different categories. Usually, though, they are some version of the following:
 
 
-<table>
-  <tr>
-   <td><strong>A</strong>
-<p>
-Demonstrates creativity and/or sophistication in satisfying the learning targets
-   </td>
-   <td><strong>B</strong>
-<p>
-Satisfies every aspect of the learning targets
-   </td>
-   <td><strong>C</strong>
-<p>
-Partially satisfies the learning targets
-   </td>
-   <td><strong> D</strong>
-<p>
-Demonstrates only basic understanding or skill as described in the learning targets.
-   </td>
-   <td><strong>F</strong>
-<p>
-Incomplete, unacceptably brief, or shows little or none of the understanding described in the learning targets
-   </td>
-  </tr>
-</table>
+|      A      |      B      |      C      |      D      |      F      |
+|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
+| Demonstrates creativity and/or sophistication in satisfying the learning targets | Satisfies every aspect of the learning targets | Partially satisfies the learning targets | Demonstrates only basic understanding or skill as described in the learning targets. | Incomplete, unacceptably brief, or shows little or none of the understanding described in the learning targets |
+
 
 
 **How to get an A on a task:**

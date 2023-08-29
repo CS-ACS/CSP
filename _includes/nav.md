@@ -11,22 +11,27 @@
 
 ***
 
-* __CSP__
-    * [Unit 2]({{ "/curriculum/2/" | relative_url }})
-    * [Project Rubric]({{ "/curriculum/project/" | relative_url }})
+* __[Intro-CS]({{ "/ics/syllabus" | relative_url }})__
+    * Unit 1
 
 ***
 
-* __Robotics__
-    1. [Chain Reaction Machine]({{ "/robotics/chainreaction/" | relative_url }})
-    2. [Racecar & Lifting Arm]({{ "/robotics/car_lifter/" | relative_url }})
-    3. [Clawbot Build]({{ "/robotics/clawbot/" | relative_url }})
-    4. [Coding Setup]({{ "/robotics/coding_setup/" | relative_url }})
-    5. [Loops]({{ "/robotics/loops/" | relative_url }})
-    6. [Conditionals]({{ "/robotics/conditionals/" | relative_url }})
+* __[CSP]({{ "/csp/syllabus" | relative_url }})__
+    * Unit 1
 
 ***
+
+* __[CSA]({{ "/csa/syllabus" | relative_url }})__
+    * Unit 1
+
+***
+
+* __[Design Tech]({{ "/dt/syllabus" | relative_url }})__
+    * Unit 1
+
+***
+
+
 
 * [Tools]({{ "/tools" | relative_url }})
-* [Syllabus](https://docs.google.com/document/d/1j5vMltXCLk_IBxIGtvJMpJM-EzXZ0kkMKobXdTgthow/edit?usp=sharing)
-* [Collaboration & Academic Honesty Policy](https://docs.google.com/document/d/1F9c9uvOnxdIiVt4wpIzXNgeNnL1hriaNY6wJCp7g88k/edit?usp=sharing)
+* [Collaboration & Academic Honesty Policy]({{ "/academic_honesty" | relative_url }})

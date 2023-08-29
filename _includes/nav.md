@@ -17,7 +17,9 @@
 ***
 
 * __[CSP]({{ "/csp/syllabus" | relative_url }})__
-    * Unit 1
+    * [0-Summer Assignment]({{ "/csp/0" | relative_url }})
+    * [1-C]({{ "/csp/1" | relative_url }})
+    
 
 ***
 
@@ -36,3 +38,4 @@
 * [Tools]({{ "/tools" | relative_url }})
 * [Collaboration & Academic Honesty Policy]({{ "/academic_honesty" | relative_url }})
 * [Grading Policy]({{ "/grading" | relative_url }})
+* [About Mr. Bowman]({{ "/bowman" | relative_url }})

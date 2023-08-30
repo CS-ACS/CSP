@@ -4,7 +4,9 @@ screenId: ClQXfUurzgU
 ---
 
 # Chapter 1: ``C``
+[expand]
 {% include cs50player.html id=page.videoId screen=page.screenId %}
+[expand]
 -   Lecture
     
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/1/lecture1.mp3.download)

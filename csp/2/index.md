@@ -7,8 +7,8 @@ videoId: 8PrOp9t0PyQ
 {% include cs50player.html id=page.videoId %}
 
 -   Problem Set
-    -   [Quotient](2-2)
-    -   [Letters](2-3)
+    -   [Quotient](2-1)
+    -   [Letters](2-2)
     -   [Caesar](caesar_c_python)
     -   [Vigenere](vigenère_python)
     -   [Crack](crack)

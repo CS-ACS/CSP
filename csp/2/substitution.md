@@ -1,4 +1,4 @@
-# [Substitution](#substitution)
+# Substitution
 
 After watching the entire [Chapter 2 lecture]({{ "/csp/2" | relative_url }}) and the practice problems, implement a program that implements a substitution cipher, per the below.
 
@@ -11,7 +11,7 @@ ciphertext: VKXXN
 
 * TOC
 {:toc}
-## [Background](#background)
+## Background
 
 In a substitution cipher, we “encrypt” (i.e., conceal in a reversible way) a message by replacing every letter with another letter. To do so, we use a _key_: in this case, a mapping of each of the letters of the alphabet to the letter it should correspond to when we encrypt it. To “decrypt” the message, the receiver of the message would need to know the key, so that they can reverse the process: translating the encrypt text (generally called _ciphertext_) back into the original message (generally called _plaintext_).
 
@@ -62,7 +62,7 @@ $ ./substitution 1 2 3
 Usage: ./substitution key
 ```
 
-## [Specification](#specification)
+## Specification
 
 Design and implement a program, `substitution`, that encrypts messages using a substitution cipher.
 
@@ -75,11 +75,11 @@ Design and implement a program, `substitution`, that encrypts messages using a s
 -   Your program must preserve case: capitalized letters must remain capitalized letters; lowercase letters must remain lowercase letters.
 -   After outputting ciphertext, you should print a newline. Your program should then exit by returning `0` from `main`.
 
-## [Walkthrough](#walkthrough)
+## Walkthrough
 
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border embed-responsive-item" data-video="" src="https://www.youtube.com/embed/cXAoZAsgxJ4?modestbranding=0&amp;rel=0&amp;showinfo=0" scrolling="no" id="iFrameResizer0" style="overflow: hidden;"></iframe>
 
-## [How to Test Your Code](#how-to-test-your-code)
+## How to Test Your Code
 
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
@@ -93,7 +93,7 @@ Execute the below to evaluate the style of your code using `style50`.
 style50 substitution.c
 ```
 
-## [How to Submit](#how-to-submit)
+## How to Submit
 
 Execute the below, logging in with your GitHub username and password when prompted. For security, you’ll see asterisks (`*`) instead of the actual characters in your password.
 

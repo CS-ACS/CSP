@@ -17,6 +17,7 @@
 ***
 
 * __[CSP]({{ "/csp" | relative_url }})__
+
     _. [Summer Assignment]({{ "/csp/0" | relative_url }})
     1. [C]({{ "/csp/1" | relative_url }})
     2. [Arrays]({{ "/csp/2" | relative_url }})

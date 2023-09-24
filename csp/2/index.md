@@ -7,16 +7,17 @@ videoId: XmYnsO7iSI8
 {% include cs50player.html id=page.videoId %}
 
 ## Problem Set
--   For everyone
+-   Complete each of the following:
     -   [Quotient](2-1)
     -   [Letters](2-2)
     -   [Readability](https://cs50.harvard.edu/x/2023/psets/2/readability/)
--   For those less comfortable (choose one or more)
-    -   [Caesar](caesar)
-    -   [Bulbs](https://cs50.harvard.edu/x/2023/psets/2/bulbs/)
--   For those more comfortable (choose one or more)
-    -   [Substitution](https://cs50.harvard.edu/x/2023/psets/2/substitution/)
-    -   [Wordle50](https://cs50.harvard.edu/x/2023/psets/2/wordle50/)
+-   Choose one or more:
+    -   For those less comfortable 
+        -   [Caesar](caesar)
+        -   [Bulbs](https://cs50.harvard.edu/x/2023/psets/2/bulbs/)
+    -   For those more comfortable 
+        -   [Substitution](https://cs50.harvard.edu/x/2023/psets/2/substitution/)
+        -   [Wordle50](https://cs50.harvard.edu/x/2023/psets/2/wordle50/)
     
 ## Resources
 -   CS50 Lecture

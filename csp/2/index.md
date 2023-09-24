@@ -18,8 +18,8 @@ videoId: XmYnsO7iSI8
     -   [Substitution](https://cs50.harvard.edu/x/2023/psets/2/substitution/)
     -   [Wordle50](https://cs50.harvard.edu/x/2023/psets/2/wordle50/)
     
-    
--   Lecture
+## Resources
+-   CS50 Lecture
     -   [Audio](https://cdn.cs50.net/2019/fall/lectures/2/lecture2.mp3.download)
     -   [Notes](notes)
     -   Slides
